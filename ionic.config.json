@@ -1,0 +1,7 @@
+{
+  "name": "AgroLazcApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

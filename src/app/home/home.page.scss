@@ -1,0 +1,19 @@
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #006539, #167043, #267c4e, #338859, #409464) !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 80%;
+    height: 10vh;
+}
+
+.buttons{
+    width: 80%;
+    height: 80vh;
+}
