@@ -1,1 +1,1 @@
-INSERT 
+    SELECT * FROM productos;
