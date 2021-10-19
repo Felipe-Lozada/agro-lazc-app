@@ -32,3 +32,15 @@
     align-items: center;
     justify-content: space-around;
 }
+
+.buttons ion-button{
+    width: 100%;
+    --background: #409464;
+    --border-color: #f2f2f2;
+    --border-radius: 10px;
+    color: #ffc245;
+}
+
+.buttons ion-button ion-icon{
+    margin: 0 5px 0 0;
+}
