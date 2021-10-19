@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -7,16 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePage implements OnInit {
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {
   }
 
   login(){
     console.log({message: 'Iniciar Sesion', code: 0});
+    this.navCtrl.navigateForward('login');
   }
   register(){
     console.log({message: 'Crear usuario', code: 1});
+    this.navCtrl.navigateForward('register');
   }
   salir(){
     console.log({message: 'Salir de la app', code: 2});

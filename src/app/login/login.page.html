@@ -1,9 +1,42 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>login</ion-title>
+<ion-header color="primary" class="ion-no-border">
+  <ion-toolbar color="primary" class="ion-no-border">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="container">
+    <picture class="logo">
+      <img src="../../assets/icon/agro_logo.png" alt="logo_agrolazc" class="logo_img">
+    </picture>
+    <div class="form_container">
+      <h2><ion-text color="tertiary">BIENVENIDO</ion-text></h2>
+      <form>
+        <ion-item color="primary">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+          <ion-label>Telefono</ion-label>
+          <ion-input clearInput required type="number"></ion-input>
+        </ion-item>
+        <ion-item color="primary">
+          <ion-icon name="lock-closed"></ion-icon>
+          <ion-label>Password</ion-label>
+          <ion-input clearInput required type="passsword"></ion-input>
+        </ion-item>
+        <div class="login__link">
+          <ion-button color="primary" type="submit">
+            Login 
+          </ion-button>
+          <ion-label> <a href="#">¿Olvidaste tu contraseña?</a> </ion-label>
+        </div>
+      </form>
+    </div>
+  </div>
 </ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-text color="ligth">
+    <h4>¿No tienes cuenta? <small><a href="">Registrate Aqui</a></small></h4>
+  </ion-text>
+</ion-footer>
