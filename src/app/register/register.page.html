@@ -1,7 +1,11 @@
 <ion-header class="ion-no-border" color="primary">
   <ion-toolbar class="ion-no-border" color="primary">
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="/home" mode="ios"
+      <ion-back-button 
+      defaultHref="/home" 
+      mode="ios"
+      color="tertiary"
+      [text]="Atras"
       ></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
@@ -13,33 +17,36 @@
       <img src="../../assets/icon/agro_logo.png" alt="logo_agrolazc" class="logo_img">
     </picture>
     <div class="form_container">
-      <h2><ion-text color="tertiary">BIENVENIDO</ion-text></h2>
-      <form>
+      <h2><ion-text color="tertiary">CREA TU CUENTA</ion-text></h2>
+      <form 
+        [formGroup]="registerForm"
+        (ngSubmit)="registerUser(registerForm.value)">
         <ion-item color="primary">
           <ion-icon name="logo-whatsapp"></ion-icon>
           <ion-label >Numero de celular: </ion-label>
-          <ion-input clearInput required type="tel" maxLength=10></ion-input>
+          <ion-input clearInput required type="tel" maxLength=10 formControlName="phoneNumber"></ion-input>
         </ion-item>
-        <ion-item color="primary">
+<!--         <ion-item color="primary">
           <ion-icon name="mail"></ion-icon>
           <ion-label >Correo: </ion-label>
           <ion-input clearInput required type="email"></ion-input>
-        </ion-item>
+        </ion-item> -->
         <ion-item color="primary">
           <ion-icon name="lock-closed"></ion-icon>
           <ion-label >Contraseña: </ion-label>
-          <ion-input clearInput required type="password"></ion-input>
+          <ion-input clearInput required type="password" formControlName="password"></ion-input>
         </ion-item>
         <ion-item color="primary">
           <ion-icon name="lock-closed"></ion-icon>
           <ion-label >Confirma tu contraseña: </ion-label>
-          <ion-input clearInput required type="password"></ion-input>
+          <ion-input clearInput required type="password" formControlName="rpassword"></ion-input>
         </ion-item>
         <div class="login__link">
           <ion-button color="primary" type="submit">
-            Login 
+            <ion-icon name="arrow-forward" slot="end"></ion-icon>
+            Crear Cuenta
           </ion-button>
-          <ion-label> <a href="#">¿Olvidaste tu contraseña?</a> </ion-label>
+          <ion-label><a href="#">Tèrminos y Condiciones</a> </ion-label>
         </div>
       </form>
     </div>
@@ -48,6 +55,6 @@
 
 <ion-footer class="ion-no-border">
   <ion-text color="ligth">
-    <h4>¿No tienes cuenta? <small><a href="">Registrate Aqui</a></small></h4>
+    <h4>¿Ya tienes cuenta? <small><a (click)="ingresar()">Ingresa</a></small></h4>
   </ion-text>
 </ion-footer>
