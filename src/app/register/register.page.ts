@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { NavController } from '@ionic/angular';
+import { NavController, ToastController } from '@ionic/angular';
+import {UserService} from '../services/user.service';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +16,11 @@ export class RegisterPage implements OnInit {
       type: 'pattern', message: 'Numero de teleofono no valido'
     }
   };
-  constructor(private navCtrl: NavController, private formBuilder: FormBuilder) {
+  constructor(
+    private navCtrl: NavController,
+    private formBuilder: FormBuilder,
+    private toastController: ToastController
+    ) {
       this.registerForm = this.formBuilder.group({
         phoneNumber: new FormControl('', Validators.compose([
           Validators.required,
@@ -40,13 +45,47 @@ export class RegisterPage implements OnInit {
   ngOnInit() {
   }
 
+  async presentToast(message){
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000
+    });
+
+    toast.present();
+  }
+
+  checkPassword(data){
+    const userPhone = data.phoneNumber;
+    const password = data.password;
+    const cpassword = data.rpassword;
+
+    return new Promise((resolve, reject) => {
+      if(password === cpassword) {
+        resolve({userPhone, password});
+        console.log({userPhone, password});
+      } else {
+        reject('Las contraseñas no coinciden');
+        console.error('Las contraseñas no coinciden');
+      }
+    });
+  }
+
+  async registerUser(info){
+    // const userInfo = await this.checkPassword(info);
+    // console.log(userInfo);
+    // this.presentToast(userInfo);
+
+    this.checkPassword(info)
+    .then((data: any)=>{
+      console.log(data);
+    })
+    .catch(err=>console.error(err));
+  }
+
   ingresar(){
     this.navCtrl.navigateBack('/login');
   }
 
-  registerUser(data){
-    console.log(data);
-    this.registerForm.reset();
-  }
+
 
 }

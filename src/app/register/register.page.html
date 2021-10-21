@@ -20,7 +20,7 @@
       <h2><ion-text color="tertiary">CREA TU CUENTA</ion-text></h2>
       <form 
         [formGroup]="registerForm"
-        (ngSubmit)="registerUser(registerForm.value)">
+        (ngSubmit)="checkPassword(registerForm.value)">
         <ion-item color="primary">
           <ion-icon name="logo-whatsapp"></ion-icon>
           <ion-label >Numero de celular: </ion-label>

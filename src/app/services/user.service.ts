@@ -7,7 +7,15 @@ export class UserService {
 
   constructor() { }
 
-  loginUser(){}
+  loginUser(credentials){}
 
-  registerUser(){}
+  registerUser(credentials){
+    return new Promise((resolve, reject) => {
+      if(credentials) {
+        resolve({code: 200});
+      } else{
+        reject({code:404});
+      }
+    });
+  }
 }
