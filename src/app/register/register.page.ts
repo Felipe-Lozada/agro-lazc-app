@@ -58,6 +58,7 @@ export class RegisterPage implements OnInit {
     const userPhone = data.phoneNumber;
     const password = data.password;
     const cpassword = data.rpassword;
+    this.registerForm.reset();
 
     return new Promise((resolve, reject) => {
       if(password === cpassword) {
@@ -74,12 +75,15 @@ export class RegisterPage implements OnInit {
     // const userInfo = await this.checkPassword(info);
     // console.log(userInfo);
     // this.presentToast(userInfo);
-
     this.checkPassword(info)
     .then((data: any)=>{
       console.log(data);
     })
-    .catch(err=>console.error(err));
+
+    .catch((err)=> {
+      this.presentToast('las contraseñas no coinciden');
+      console.error(err);
+    });
   }
 
   ingresar(){

@@ -42,7 +42,10 @@
           <ion-input clearInput required type="password" formControlName="rpassword"></ion-input>
         </ion-item>
         <div class="login__link">
-          <ion-button color="primary" type="submit">
+          <ion-button 
+          color="primary" 
+          type="submit"
+          [disabled]="registerForm.invalid">
             <ion-icon name="arrow-forward" slot="end"></ion-icon>
             Crear Cuenta
           </ion-button>
