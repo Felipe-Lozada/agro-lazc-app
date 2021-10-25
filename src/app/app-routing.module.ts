@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: 'cultivo-info',
     loadChildren: () => import('./pages/cultivo-info/cultivo-info.module').then( m => m.CultivoInfoPageModule)
+  },
+  {
+    path: 'cebada',
+    loadChildren: () => import('./pages/cebada/cebada.module').then( m => m.CebadaPageModule)
   }
 ];
 

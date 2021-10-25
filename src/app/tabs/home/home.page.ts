@@ -1,5 +1,6 @@
+import { NavController, ToastController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import { CultivosService } from '../../services/cultivos.service';
+//import { CultivosService } from '../../services/cultivos.service';
 
 @Component({
   selector: 'app-home',
@@ -35,13 +36,23 @@ export class HomePage implements OnInit {
     }
   ];
 
-  constructor(private cultivoService: CultivosService) {
+  /*constructor(private cultivoService: CultivosService) {
     this.cultivoService.obtenerCultivosPorNombre().then(
       (res: any) => {
         console.table(res);
       }
     ).catch(error => console.log(error));
+  }*/
+
+  constructor(private navCtrl: NavController, private toastController: ToastController) {}
+  async presentToast(message: string) {
+    const toast = await this.toastController.create({
+      message,
+      duration: 2000
+    });
+    toast.present();
   }
+
 
   ngOnInit() {
   }
@@ -49,6 +60,13 @@ export class HomePage implements OnInit {
   verDetallesCultivo(idCultivo){
     console.log(idCultivo);
     // Se envia la peticion http con el id del cultivo, para obtener la info de este.
+    if (idCultivo === 1) {
+      this.navCtrl.navigateForward('/cultivo-info');
+    } else if(idCultivo === 3){
+      this.navCtrl.navigateForward('/cebada');
+    } else {
+      this.presentToast('Estas opciones aun no estan habilitadas');
+    }
   }
 
 }
