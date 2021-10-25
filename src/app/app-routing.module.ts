@@ -4,36 +4,20 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: './tabs/home',
     pathMatch: 'full'
   },
   {
     path: 'home',
-    loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+    loadChildren: () => import('./tabs/home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'login',
-    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+    path: 'tabs',
+    loadChildren: () => import('./tabs/tabs.module').then( m => m.TabsPageModule)
   },
   {
-    path: 'register',
-    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  },
-  {
-    path: 'recover',
-    loadChildren: () => import('./recover/recover.module').then( m => m.RecoverPageModule)
-  },
-  {
-    path: 'afecciones',
-    loadChildren: () => import('./afecciones/afecciones.module').then( m => m.AfeccionesPageModule)
-  },
-  {
-    path: 'productos',
-    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
-  },
-  {
-    path: 'ayuda',
-    loadChildren: () => import('./ayuda/ayuda.module').then( m => m.AyudaPageModule)
+    path: 'cultivo-info',
+    loadChildren: () => import('./pages/cultivo-info/cultivo-info.module').then( m => m.CultivoInfoPageModule)
   }
 ];
 
