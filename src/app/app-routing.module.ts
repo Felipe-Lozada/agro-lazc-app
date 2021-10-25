@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
   },
   {
-    path: 'start',
-    loadChildren: () => import('./start/start.module').then( m => m.StartPageModule)
-  },
-  {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
@@ -26,6 +22,18 @@ const routes: Routes = [
   {
     path: 'recover',
     loadChildren: () => import('./recover/recover.module').then( m => m.RecoverPageModule)
+  },
+  {
+    path: 'afecciones',
+    loadChildren: () => import('./afecciones/afecciones.module').then( m => m.AfeccionesPageModule)
+  },
+  {
+    path: 'productos',
+    loadChildren: () => import('./productos/productos.module').then( m => m.ProductosPageModule)
+  },
+  {
+    path: 'ayuda',
+    loadChildren: () => import('./ayuda/ayuda.module').then( m => m.AyudaPageModule)
   }
 ];
 
