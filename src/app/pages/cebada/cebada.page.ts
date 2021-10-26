@@ -9,72 +9,77 @@ export class CebadaPage implements OnInit {
 
 public cebadaPlagas = [
   {
-    id: '',
-    nombre: '',
-    nombreTecnico: '',
-    descripcion: ''},
-  {
-    id: '',
+    id: 1,
     nombre: '',
     nombreTecnico: '',
     descripcion: ''
   },
   {
-    id: '',
+    id: 2,
     nombre: '',
     nombreTecnico: '',
     descripcion: ''
   },
   {
-    id: '', nombre: '',
+    id: 3,
+    nombre: '',
+    nombreTecnico: '',
+    descripcion: ''
+  },
+  {
+    id: 4,
+    nombre: '',
     nombreTecnico: '',
     descripcion: ''
   }
 ];
 public cebadaEnfermedades = [
   {
-    id: '', nombre: '',
+    id: 1,
+    nombre: '',
     nombreTecnico: '',
     descripcion: ''
   },
   {
-    id: '', nombre: '',
+    id: 2,
+    nombre: '',
     nombreTecnico: '',
     descripcion: ''
   },
   {
-    id: '', nombre: '',
+    id: 3,
+    nombre: '',
     nombreTecnico: '',
     descripcion: ''
   }
 ];
 public cebadaMalezas = [
   {
-    id: '',
+    id: 1,
     nombre: '',
     nombreTecnico: '',
     descripcion: ''
   },
   {
-    id: '',
+    id: 2,
     nombre: '',
     nombreTecnico: '',
     descripcion: ''
   },
   {
-    id: '',
+    id: 3,
     nombre: '',
     nombreTecnico: '',
     descripcion: ''
   },
   {
-    id: '',
+    id: 4,
     nombre: '',
     nombreTecnico: '',
     descripcion: ''
   },
   {
-    id: '',
+    id: 5,
     nombre: '',
     nombreTecnico: '',
     descripcion: ''

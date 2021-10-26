@@ -23,7 +23,12 @@ const routes: Routes = [
       path: 'ayuda',
       loadChildren: () => import('../tabs/ayuda/ayuda.module').then(m => m.AyudaPageModule)
     }]
-  }
+  },
+  {
+    path: '**',
+    redirectTo: '/tabs/home',
+    pathMatch: 'full',
+  },
 ];
 
 @NgModule({
