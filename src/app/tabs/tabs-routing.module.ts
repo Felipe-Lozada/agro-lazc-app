@@ -5,6 +5,11 @@ import { TabsPage } from './tabs.page';
 
 const routes: Routes = [
   {
+    path: 'home',
+    redirectTo: '/tabs/home',
+    pathMatch: 'full',
+  },
+  {
     path: '',
     component: TabsPage,
     children: [{
@@ -23,12 +28,7 @@ const routes: Routes = [
       path: 'ayuda',
       loadChildren: () => import('../tabs/ayuda/ayuda.module').then(m => m.AyudaPageModule)
     }]
-  },
-  {
-    path: '**',
-    redirectTo: '/tabs/home',
-    pathMatch: 'full',
-  },
+  }
 ];
 
 @NgModule({

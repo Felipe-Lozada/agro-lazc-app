@@ -10,45 +10,45 @@ export class CebadaPage implements OnInit {
 public cebadaPlagas = [
   {
     id: 1,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'pulgon',
+    nombreTecnico: 'aphidoidea',
     descripcion: ''
   },
   {
     id: 2,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'fraile',
+    nombreTecnico: 'macrodactylus subspinosus',
     descripcion: ''
   },
   {
     id: 3,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'chapulin',
+    nombreTecnico: 'sphenarium purpurascens',
     descripcion: ''
   },
   {
     id: 4,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'trips',
+    nombreTecnico: 'frankliniella occidentalis',
     descripcion: ''
   }
 ];
 public cebadaEnfermedades = [
   {
     id: 1,
-    nombre: '',
+    nombre: 'roya',
     nombreTecnico: '',
     descripcion: ''
   },
   {
     id: 2,
-    nombre: '',
+    nombre: 'escaldadura',
     nombreTecnico: '',
     descripcion: ''
   },
   {
     id: 3,
-    nombre: '',
+    nombre: 'mancha reticulada',
     nombreTecnico: '',
     descripcion: ''
   }
@@ -56,32 +56,32 @@ public cebadaEnfermedades = [
 public cebadaMalezas = [
   {
     id: 1,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'navo',
+    nombreTecnico: 'brassica rapa subsp oleifera',
     descripcion: ''
   },
   {
     id: 2,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'acahual',
+    nombreTecnico: 'tithonia diversifolia',
     descripcion: ''
   },
   {
     id: 3,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'quelite',
+    nombreTecnico: 'amaranthus',
     descripcion: ''
   },
   {
     id: 4,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'avena',
+    nombreTecnico: 'avena fatua',
     descripcion: ''
   },
   {
     id: 5,
-    nombre: '',
-    nombreTecnico: '',
+    nombre: 'chayotillo',
+    nombreTecnico: 'sicyos deppei',
     descripcion: ''
   }
 ];
@@ -89,6 +89,10 @@ public cebadaMalezas = [
   constructor() { }
 
   ngOnInit() {
+  }
+
+  verRecomendaciones(plagaInfo){
+    console.log(plagaInfo);
   }
 
 }
