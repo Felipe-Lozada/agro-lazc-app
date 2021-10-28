@@ -184,6 +184,8 @@ export class AfeccionesPage implements OnInit {
     }
   ];
 
+  public textoBuscar: string;
+
   constructor( private alertCtrl: AlertController) { }
   async presentAlert(nombre, nombreTecnico) {
     const alert = await this.alertCtrl.create({
@@ -201,6 +203,11 @@ export class AfeccionesPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  buscarAfecciones(e){
+    console.log(e);
+    this.textoBuscar = e.detail.value;
   }
 
   onClick(afeccion) {

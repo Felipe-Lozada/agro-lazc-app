@@ -1,5 +1,6 @@
-import { NavController, ToastController } from '@ionic/angular';
+import { NavController, ToastController, MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 //import { CultivosService } from '../../services/cultivos.service';
 
 @Component({
@@ -44,7 +45,10 @@ export class HomePage implements OnInit {
     ).catch(error => console.log(error));
   }*/
 
-  constructor(private navCtrl: NavController, private toastController: ToastController) {}
+  constructor(
+    private navCtrl: NavController,
+    private toastController: ToastController,
+    private menuCtrl: MenuController) {}
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message,
@@ -69,4 +73,7 @@ export class HomePage implements OnInit {
     }
   }
 
+  toggleMenu(){
+    this.menuCtrl.toggle('main');
+  }
 }

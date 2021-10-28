@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { AfeccionesPageRoutingModule } from './afecciones-routing.module';
 
 import { AfeccionesPage } from './afecciones.page';
+import { PipeModule } from 'src/app/pipes/pipe/pipe.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    AfeccionesPageRoutingModule
+    AfeccionesPageRoutingModule,
+    PipeModule
   ],
   declarations: [AfeccionesPage]
 })
