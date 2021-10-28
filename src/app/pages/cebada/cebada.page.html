@@ -15,22 +15,22 @@
     <div class="cebada_desc">
       <ion-item color="light">
         <ion-label>Plagas</ion-label>
-        <ion-select color="light" mode="ios" interface="action-sheet" placeholder="Select One">
-          <ion-select-option *ngFor="let plaga of cebadaPlagas" [value]="plaga" (click)="verRecomendaciones(plaga)">{{plaga.nombre}}</ion-select-option>
+        <ion-select color="light" mode="ios" interface="action-sheet" placeholder="Select One" (ionChange)="verRecomendaciones($event)">
+          <ion-select-option *ngFor="let plaga of cebadaPlagas" [value]="plaga">{{plaga.nombre}}</ion-select-option>
         </ion-select>
       </ion-item>
     
       <ion-item color="light">
         <ion-label>Enfermedades</ion-label>
-        <ion-select color="light" mode="ios" interface="action-sheet" placeholder="Select One" placeholder="Select One">
-          <ion-select-option *ngFor="let enfermedad of cebadaEnfermedades" [value]="enfermedad" (click)="verRecomendaciones(enfermedad)">{{enfermedad.nombre}}</ion-select-option>   
+        <ion-select color="light" mode="ios" interface="action-sheet" placeholder="Select One" placeholder="Select One" (ionChange)="verRecomendaciones($event)">
+          <ion-select-option *ngFor="let enfermedad of cebadaEnfermedades" [value]="enfermedad">{{enfermedad.nombre}}</ion-select-option>   
         </ion-select>
       </ion-item>
           
       <ion-item color="light">
         <ion-label>Malezas</ion-label>
-        <ion-select color="light" mode="ios" interface="action-sheet" placeholder="Select One" placeholder="Select One">
-          <ion-select-option *ngFor="let maleza of cebadaMalezas" [value]="maleza" (click)="verRecomendaciones(maleza)">{{maleza.nombre}}</ion-select-option>
+        <ion-select color="light" mode="ios" interface="action-sheet" placeholder="Select One" placeholder="Select One" (ionChange)="verRecomendaciones($event)">
+          <ion-select-option *ngFor="let maleza of cebadaMalezas" [value]="maleza">{{maleza.nombre}}</ion-select-option>
         </ion-select>
       </ion-item>
     </div>

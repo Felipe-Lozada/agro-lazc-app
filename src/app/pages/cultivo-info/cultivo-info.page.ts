@@ -103,8 +103,8 @@ export class CultivoInfoPage implements OnInit {
   ngOnInit() {
   }
 
-  verRecomendaciones(plagaInfo){
-    console.log(plagaInfo);
+  verRecomendaciones(e){
+    console.log(e);
   }
 
 

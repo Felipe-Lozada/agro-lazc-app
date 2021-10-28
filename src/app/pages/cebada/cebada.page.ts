@@ -91,8 +91,8 @@ public cebadaMalezas = [
   ngOnInit() {
   }
 
-  verRecomendaciones(plagaInfo){
-    console.log(plagaInfo);
+  verRecomendaciones(e){
+    console.log(e);
   }
 
 }
