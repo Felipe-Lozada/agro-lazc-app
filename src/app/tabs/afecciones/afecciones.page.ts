@@ -184,7 +184,7 @@ export class AfeccionesPage implements OnInit {
     }
   ];
 
-  public textoBuscar: string;
+  public textoBuscar = '';;
 
   constructor( private alertCtrl: AlertController) { }
   async presentAlert(nombre, nombreTecnico) {
