@@ -12,4 +12,7 @@ export class RecomendacionPage implements OnInit {
   ngOnInit() {
   }
 
+  salir(){
+    console.log('gusbai');
+  }
 }

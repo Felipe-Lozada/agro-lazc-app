@@ -22,6 +22,11 @@ const routes: Routes = [
   {
     path: 'cebada',
     loadChildren: () => import('./pages/cebada/cebada.module').then( m => m.CebadaPageModule)
+  },
+  {
+    path: 'recomendacion',
+    loadChildren: () => import('./modals/recomendacion/recomendacion.module')
+    .then (m =>  m.RecomendacionPageModule)
   }
 ];
 
