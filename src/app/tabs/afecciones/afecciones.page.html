@@ -10,10 +10,10 @@
     <ion-item 
     *ngFor="let afeccion of afecciones |filtro: textoBuscar" 
     color="light" 
-    (click)="onClick(afeccion)">
+    (click)="onClick(afeccion)"
+    detail>
       <ion-label>{{afeccion.nombre}}</ion-label>
       <ion-label color="tertiary"><small>{{afeccion.nombreTecnico}}</small></ion-label>
-      <ion-icon name="chevron-forward" slot="end" color="secondary"></ion-icon>
     </ion-item>
   </ion-list>
 </ion-content>
