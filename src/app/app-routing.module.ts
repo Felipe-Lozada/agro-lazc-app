@@ -27,6 +27,10 @@ const routes: Routes = [
     path: 'recomendacion',
     loadChildren: () => import('./modals/recomendacion/recomendacion.module')
     .then (m =>  m.RecomendacionPageModule)
+  },
+  {
+    path: 'recomendacion-enfermedades',
+    loadChildren: () => import('./modals/recomendacion-enfermedades/recomendacion-enfermedades.module').then( m => m.RecomendacionEnfermedadesPageModule)
   }
 ];
 
