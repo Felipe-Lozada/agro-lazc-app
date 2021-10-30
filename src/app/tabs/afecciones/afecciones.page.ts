@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, NavController } from '@ionic/angular';
-
+import { RecomendacionPage } from '../../modals/recomendacion/recomendacion.page';
 @Component({
   selector: 'app-afecciones',
   templateUrl: './afecciones.page.html',
@@ -110,7 +110,20 @@ export class AfeccionesPage implements OnInit {
 
   public textoBuscar = '';
 
-  constructor( private alertCtrl: AlertController, private navCtrl: NavController) { }
+  constructor(
+    private alertCtrl: AlertController,
+    private navCtrl: NavController,
+    private modalCtrl: ModalController
+    ) { }
+
+    async presentModal(){
+      const modal = await this.modalCtrl.create({
+        component: RecomendacionPage,
+        mode: 'ios'
+      });
+      return await modal.present();
+    }
+
   async presentAlert(nombre, nombreTecnico, descripcion) {
     const alert = await this.alertCtrl.create({
       header: nombre,
@@ -122,7 +135,7 @@ export class AfeccionesPage implements OnInit {
           text: 'Producto recomendado',
           handler: () => {
             console.log('Confirm Okay');
-            this.navCtrl.navigateForward('/recomendacion');
+            this.presentModal();
           }
         },
         {

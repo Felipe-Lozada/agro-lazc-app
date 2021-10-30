@@ -6,3 +6,15 @@ ion-header{
 ion-list{
     background: #f2f2f2;
 }
+
+ion-img{
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+img{
+    width: 150px;
+    height: 150px;
+}

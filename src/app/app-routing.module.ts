@@ -24,13 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./pages/cebada/cebada.module').then( m => m.CebadaPageModule)
   },
   {
-    path: 'recomendacion',
-    loadChildren: () => import('./modals/recomendacion/recomendacion.module')
-    .then (m =>  m.RecomendacionPageModule)
-  },
-  {
     path: 'recomendacion-enfermedades',
-    loadChildren: () => import('./modals/recomendacion-enfermedades/recomendacion-enfermedades.module').then( m => m.RecomendacionEnfermedadesPageModule)
+    loadChildren: () =>
+    import('./modals/recomendacion-enfermedades/recomendacion-enfermedades.module')
+    .then( m => m.RecomendacionEnfermedadesPageModule)
   }
 ];
 

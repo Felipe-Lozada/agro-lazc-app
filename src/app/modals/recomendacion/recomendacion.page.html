@@ -13,10 +13,19 @@
       </ion-card-header>
     
       <ion-card-content color="light">
-        <img src="../../../assets/img/peak.png" alt="foto del producto" class="producto_photo">
-        <ion-text color="secondary">
-          Keep close to Nature's heart... and break clear away, once in awhile,<br>
-          and climb a mountain or spend a week in the woods. Wash your spirit clean.
+        <ion-img src="../../../assets/img/peak.png" alt="foto del producto" class="producto_photo"></ion-img>
+        <ion-text color="dark">
+          <ion-label color="tertiary"><small><i>Herbicida</i></small></ion-label> <br>
+          <ion-segment (ionChange)="segmentChanged($event)" value="sunny" color="secondary" mode="md">
+            <ion-segment-button value="sunny" color="secondary" mode="md">
+              <ion-icon name="document-text-outline" slot="start"></ion-icon>
+              <ion-label color="secondary">Producto</ion-label>
+            </ion-segment-button>
+            <ion-segment-button value="rainy" color="secondary" mode="md">
+              <ion-icon name="eyedrop-outline" slot="start"></ion-icon>
+              <ion-label color="secondary">Aplicaci&oacute;n</ion-label>
+            </ion-segment-button>
+          </ion-segment>
         </ion-text>
       </ion-card-content>
     </ion-card>
@@ -24,7 +33,7 @@
 </ion-content>
 
 <ion-footer class="ion-no-border" color="secondary" mode="ios">
-  <ion-toolbar class="ion-no-border" color="secondary" mode="ios">
+  <ion-toolbar class="ion-no-border" color="secondary" mode="ios" class="ion-text-center">
     <ion-buttons slot="start">
       <ion-button (click)="salir()">
         <ion-icon slot="start" name="close-circle-outline"></ion-icon>
@@ -33,7 +42,7 @@
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="salir()">
-        <ion-icon slot="end" name="cart-ouline"></ion-icon>
+        <ion-icon slot="end" name="cash-outline"></ion-icon>
         Comprar
       </ion-button>
     </ion-buttons>

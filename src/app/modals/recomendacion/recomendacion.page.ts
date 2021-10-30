@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recomendacion',
@@ -7,12 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecomendacionPage implements OnInit {
 
-  constructor() { }
+  constructor(private modalCtrl: ModalController) {}
+
+  dismiss(){
+    this.modalCtrl.dismiss({
+      dismissed: true
+    });
+  }
 
   ngOnInit() {
   }
 
+  segmentChanged(e){
+    console.log(e);
+  }
+
   salir(){
     console.log('gusbai');
+    this.dismiss();
   }
+
+  hacerPedido(){}
 }
