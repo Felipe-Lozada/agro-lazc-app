@@ -8,6 +8,8 @@ import { ModalController } from '@ionic/angular';
 })
 export class RecomendacionPage implements OnInit {
 
+  public segmentModel='producto';
+
   constructor(private modalCtrl: ModalController) {}
 
   dismiss(){
@@ -20,6 +22,7 @@ export class RecomendacionPage implements OnInit {
   }
 
   segmentChanged(e){
+    console.log(this.segmentModel);
     console.log(e);
   }
 

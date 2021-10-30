@@ -8,13 +8,10 @@ ion-list{
 }
 
 ion-img{
+    width: 150px;
+    height: 150px;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-}
-
-img{
-    width: 150px;
-    height: 150px;
 }

@@ -6,28 +6,82 @@
 
 <ion-content mode="ios">
   <div class="container">
-    <ion-card mode="ios" color="light">
-      <ion-card-header color="light">
-        <ion-card-subtitle>Syngenta</ion-card-subtitle>
-        <ion-card-title>Peak</ion-card-title>
-      </ion-card-header>
-    
-      <ion-card-content color="light">
-        <ion-img src="../../../assets/img/peak.png" alt="foto del producto" class="producto_photo"></ion-img>
-        <ion-text color="dark">
-          <ion-label color="tertiary"><small><i>Herbicida</i></small></ion-label> <br>
-          <ion-segment (ionChange)="segmentChanged($event)" value="sunny" color="secondary" mode="md">
-            <ion-segment-button value="sunny" color="secondary" mode="md">
-              <ion-icon name="document-text-outline" slot="start"></ion-icon>
+    <ion-card color="light" mode="ios">
+      <ion-grid fixed color="light">
+        <ion-row>
+          <ion-col size="12">
+            <ion-card-header color="light">
+              <ion-card-subtitle>Syngenta</ion-card-subtitle>
+              <ion-card-title>Peak</ion-card-title>
+              <ion-card-subtitle>
+                <ion-label color="tertiary">
+                    30gr - <ion-chip color="tertiary" mode="ios" outline="true">
+                    <ion-label>Herbicidas</ion-label>
+                  </ion-chip>
+                </ion-label>
+              </ion-card-subtitle>
+            </ion-card-header>
+          </ion-col>
+          <ion-col sizeMd="6" class="ion-text-center">
+            <img class="producto_img" src="../../../assets/img/peak.png" alt="">
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <ion-segment 
+            value="producto"
+            (ionChange)="segmentChanged($event)"
+            [(ngModel)]="segmentModel" 
+            mode="ios">
+            <ion-segment-button value="producto" color="secondary" mode="ios">
+              <ion-icon name="document-text-outline" color="secondary"></ion-icon>
               <ion-label color="secondary">Producto</ion-label>
             </ion-segment-button>
-            <ion-segment-button value="rainy" color="secondary" mode="md">
-              <ion-icon name="eyedrop-outline" slot="start"></ion-icon>
+            <ion-segment-button value="aplicacion" color="secondary" mode="ios">
+              <ion-icon name="eyedrop-outline" color="secondary"></ion-icon>
               <ion-label color="secondary">Aplicaci&oacute;n</ion-label>
             </ion-segment-button>
           </ion-segment>
-        </ion-text>
-      </ion-card-content>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12">
+            <div class="producto_info">
+              <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
+              </ion-text>
+
+              <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
+                <h3>Beneficios</h3>
+                <ion-list color="secondary">
+                  
+                </ion-list>
+              </ion-text>
+
+              <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
+                <h3>Modo de acci&oacute;n.</h3>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
+              </ion-text>
+            </div>
+          </ion-col>
+          <ion-col size="12">
+            <div class="product_info">
+              <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
+                <h3>Caracteristicas</h3>
+              </ion-text>
+              <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
+                <h3></h3>
+              </ion-text>
+              <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
+                <h3>Recomendaciones</h3>
+              </ion-text>
+              <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
+                <h3>Descargas</h3>
+              </ion-text>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
     </ion-card>
   </div>
 </ion-content>
