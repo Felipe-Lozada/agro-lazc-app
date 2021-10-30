@@ -8,6 +8,7 @@ import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
 export class AppComponent {
   constructor(private screenOrientation: ScreenOrientation) {
     this.getCurrentScreenOrientation();
+    this.lockScreenOrientation();
   }
   // Get the current screen orientation such landscape or Portrait
   getCurrentScreenOrientation(){
@@ -16,6 +17,6 @@ export class AppComponent {
 
   // Lock the screen orientation to portrait
   lockScreenOrientation() {
-    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT);
+    this.screenOrientation.lock(this.screenOrientation.ORIENTATIONS.PORTRAIT_PRIMARY);
   }
 }

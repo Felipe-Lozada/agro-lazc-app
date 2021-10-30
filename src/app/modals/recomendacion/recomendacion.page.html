@@ -1,4 +1,4 @@
-<ion-header class="ion-no-border" mode="ios" color="secondary">
+<ion-header class="ion-no-border" mode="ios" color="secondary" [translucent]="true">
   <ion-toolbar class="ion-no-border" mode="ios" color="secondary" class="ion-text-center">
     <ion-title>Producto recomendado</ion-title>
   </ion-toolbar>
@@ -30,8 +30,8 @@
           <ion-col size="12">
             <ion-segment 
             value="producto"
+            [(ngModel)]="segmentModel"
             (ionChange)="segmentChanged($event)"
-            [(ngModel)]="segmentModel" 
             mode="ios">
             <ion-segment-button value="producto" color="secondary" mode="ios">
               <ion-icon name="document-text-outline" color="secondary"></ion-icon>
@@ -45,8 +45,8 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="12">
-            <div class="producto_info">
+          <ion-col size="12" [ngSwitch]="segmentModel">
+            <ng-container class ="product_info" *ngSwitchCase="'producto'">
               <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
               </ion-text>
@@ -62,10 +62,10 @@
                 <h3>Modo de acci&oacute;n.</h3>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
               </ion-text>
-            </div>
+            </ng-container>
           </ion-col>
           <ion-col size="12">
-            <div class="product_info">
+            <ng-container class ="product_info" *ngSwitchCase="'aplicacion'">
               <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
                 <h3>Caracteristicas</h3>
               </ion-text>
@@ -78,7 +78,7 @@
               <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
                 <h3>Descargas</h3>
               </ion-text>
-            </div>
+            </ng-container>
           </ion-col>
         </ion-row>
       </ion-grid>
