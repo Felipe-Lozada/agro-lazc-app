@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion rootProject.ext.compileSdkVersion
+
+  compileSdkVersion compileSdkVersion1
     defaultConfig {
         applicationId "com.agrolazc.store"
         minSdkVersion rootProject.ext.minSdkVersion

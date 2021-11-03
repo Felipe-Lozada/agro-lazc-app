@@ -1,19 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController, ModalController, NavController } from '@ionic/angular';
+import { AlertController, ModalController, NavController, ActionSheetController } from '@ionic/angular';
 import { RecomendacionPage } from '../../modals/recomendacion/recomendacion.page';
+import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-afecciones',
   templateUrl: './afecciones.page.html',
   styleUrls: ['./afecciones.page.scss'],
 })
 export class AfeccionesPage implements OnInit {
-  public afecciones = [
+  public afecciones = [];
+  public afeccionesSinOrdenar = [
     {
       id: 1,
       tipo: 'plaga',
       nombre: 'pulgon',
       nombreTecnico: 'aphidoidea',
-      descripcion: ''
+      descripcion: `Los pulgones son pequeños insectos que succionan la savia de la planta y que poseen una gran capacidad reproductora. 
+      Por ello, muchas especies de pulgones son algunas de las plagas más destructivas en: 
+      horticultura, agricultura, silvicultura y en espacios verdes y jardines.`
     },
     {
       id: 2,
@@ -113,19 +117,35 @@ export class AfeccionesPage implements OnInit {
   constructor(
     private alertCtrl: AlertController,
     private navCtrl: NavController,
-    private modalCtrl: ModalController
-    ) { }
+    private modalCtrl: ModalController,
+    private actCtrl: ActionSheetController,
+    private storage: Storage
+    ) {
+      this.storage.create();
+      this.storage.get('afeccionesArr').then(
+        (res: any) => {
+          if(res) {
+            console.log(res);
+            this.afecciones = res;
+          } else {
+            this.afecciones = this.afeccionesSinOrdenar;
+          }
+        }
+      ).catch(
+        err => console.log(err)
+      );
+    }
 
     async presentModal(){
-      const modal = await this.modalCtrl.create({
+        const modal = await this.modalCtrl.create({
         component: RecomendacionPage,
         mode: 'ios'
-      });
+        });
       return await modal.present();
     }
 
-  async presentAlert(nombre, nombreTecnico, descripcion) {
-    const alert = await this.alertCtrl.create({
+    async presentAlert(nombre, nombreTecnico, descripcion) {
+      const alert = await this.alertCtrl.create({
       header: nombre,
       mode: 'ios',
       subHeader: nombreTecnico,
@@ -154,19 +174,78 @@ export class AfeccionesPage implements OnInit {
 
     const { role } = await alert.onDidDismiss();
     console.log('onDidDismiss resolved with role', role);
-  }
+    }
 
-  ngOnInit() {
-  }
+    async presentActionSheet() {
+      const actionSheet = await this.actCtrl.create({
+      header: 'Filtros',
+      subHeader: 'ordenar por',
+      mode: 'ios',
+      cssClass: 'my-custom-class',
+      buttons: [{
+        text: 'A-Z',
+        handler: () => {
+          this.ordenarAZ();
+        }
+      }, {
+        text: 'Z-A',
+        handler: () => {
+          this.ordenarZA();
+        }
+      }, {
+        text: 'Nombre cientifico',
+        handler: () => {
+          this.ordenarNT();
+        }
+      }, {
+        text: 'Cancelar',
+        icon: 'close',
+        role: 'cancel',
+        handler: () => {
+          console.log('Cancel clicked');
+        }
+      }]
+    });
+    await actionSheet.present();
 
-  buscarAfecciones(e){
-    console.log(e);
-    this.textoBuscar = e.detail.value;
-  }
+    const { role } = await actionSheet.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
+    }
 
-  onClick(afeccion) {
+    ngOnInit() {
+      this.storage.create();
+    }
+
+    buscarAfecciones(e){
+      console.log(e);
+      this.textoBuscar = e.detail.value;
+    }
+
+    onClick(afeccion) {
     this.presentAlert(afeccion.nombre, afeccion.nombreTecnico, afeccion.descripcion);
     console.table(afeccion);
-  }
+    }
+
+    triggerAction(){
+      this.presentActionSheet();
+    }
+
+    ordenarAZ(){
+      const afeccionsAZ = this.afeccionesSinOrdenar.sort((n, sn)=> (sn.nombre < n.nombre) ? 1 : -1);
+      console.log(afeccionsAZ);
+      this.storage.set('afeccionesArr', afeccionsAZ);
+    }
+
+    ordenarZA(){
+      const afeccionsZA = this.afeccionesSinOrdenar.sort((n, sn)=> (n.nombre < sn.nombre) ? 1 : -1);
+      console.log(afeccionsZA);
+      this.storage.set('afeccionesArr', afeccionsZA);
+    }
+
+    ordenarNT(){
+      const afeccionsNT = this.afeccionesSinOrdenar.sort((n, sn)=> (sn.nombreTecnico < n.nombreTecnico) ? 1 : -1);
+      console.log(afeccionsNT);
+      this.storage.set('afeccionesArr', afeccionsNT);
+    }
 
 }

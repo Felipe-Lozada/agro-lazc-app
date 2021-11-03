@@ -32,20 +32,20 @@
             value="producto"
             [(ngModel)]="segmentModel"
             (ionChange)="segmentChanged($event)"
-            mode="ios">
-            <ion-segment-button value="producto" color="secondary" mode="ios">
+            mode="md">
+            <ion-segment-button value="producto" color="secondary" mode="md">
               <ion-icon name="document-text-outline" color="secondary"></ion-icon>
               <ion-label color="secondary">Producto</ion-label>
             </ion-segment-button>
-            <ion-segment-button value="aplicacion" color="secondary" mode="ios">
+            <ion-segment-button value="aplicacion" color="secondary" mode="md">
               <ion-icon name="eyedrop-outline" color="secondary"></ion-icon>
               <ion-label color="secondary">Aplicaci&oacute;n</ion-label>
             </ion-segment-button>
           </ion-segment>
           </ion-col>
         </ion-row>
-        <ion-row>
-          <ion-col size="12" [ngSwitch]="segmentModel">
+        <ion-row [ngSwitch]="segmentModel">
+          <ion-col size="12">
             <ng-container class ="product_info" *ngSwitchCase="'producto'">
               <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
@@ -64,7 +64,7 @@
               </ion-text>
             </ng-container>
           </ion-col>
-          <ion-col size="12">
+          <ion-col size="12" >
             <ng-container class ="product_info" *ngSwitchCase="'aplicacion'">
               <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
                 <h3>Caracteristicas</h3>

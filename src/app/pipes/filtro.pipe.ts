@@ -12,7 +12,8 @@ export class FiltroPipe implements PipeTransform {
 
     texto = texto.toLowerCase();
 
-    return arr.filter(item => item.nombre.toLowerCase().includes(texto));
+    return arr.filter(item => item.nombre.toLowerCase().includes(texto))
+    || arr.filter(item => item.nombreTecnico.toLowerCase().includes(texto));
   }
 
 }
