@@ -113,6 +113,7 @@ export class AfeccionesPage implements OnInit {
   ];
 
   public textoBuscar = '';
+  public coincidencias = false;
 
   constructor(
     private alertCtrl: AlertController,
@@ -219,6 +220,7 @@ export class AfeccionesPage implements OnInit {
     buscarAfecciones(e){
       console.log(e);
       this.textoBuscar = e.detail.value;
+      console.log(this.afecciones.length);
     }
 
     onClick(afeccion) {

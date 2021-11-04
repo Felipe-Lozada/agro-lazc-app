@@ -1,0 +1,27 @@
+[
+    {
+        "id": "1",
+        "nombre": "basf",
+        "logo": "./icon/basf.png"
+    }, 
+    {
+        "id": "2",
+        "nombre": "bayer",
+        "logo": "./icon/bayer.png"
+    },
+    {
+        "id": "3",
+        "nombre": "cosmocel",
+        "logo": "./icon/cosmocel.png"
+    },
+    {
+        "id": "4",
+        "nombre": "fmc",
+        "logo": "./icon/fmc.png"
+    },
+    {
+        "id": "5",
+        "nombre": "syngenta",
+        "logo": "./icon/syngenta.svg"
+    }
+]

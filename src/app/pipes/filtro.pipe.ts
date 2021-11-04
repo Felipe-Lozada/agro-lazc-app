@@ -4,16 +4,22 @@ import { Pipe, PipeTransform } from '@angular/core';
   name: 'filtro'
 })
 export class FiltroPipe implements PipeTransform {
+  //dataFiltered: any[];
 
-  transform(arr: any[], texto: string): any[] {
+  transform(afeccionesArr: any[], texto: string): any[] {
+
     if(texto.length === 0) {
-      return arr;
+        return afeccionesArr;
     }
 
     texto = texto.toLowerCase();
 
-    return arr.filter(item => item.nombre.toLowerCase().includes(texto)
-      || item.nombreTecnico.toLowerCase().includes(texto));
-  }
+    return afeccionesArr.filter(item =>
+      item.nombre.toLowerCase().includes(texto)
+      || item.nombreTecnico.toLowerCase().includes(texto)
+      || item.tipo.toLowerCase().includes(texto)
+    );
 
+  }
 }
+

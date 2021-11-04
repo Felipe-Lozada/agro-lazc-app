@@ -26,6 +26,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     ComponentModule,
     PipeModule,
+    FormsModule,
+    ReactiveFormsModule,
     IonicStorageModule.forRoot()
   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenOrientation],

@@ -1,0 +1,34 @@
+[
+    {
+        "id": "1",
+        "nombre": "fungicidas"
+    },
+    {
+        "id": "2",
+        "nombre": "herbicidas"
+    },
+    {
+        "id": "3",
+        "nombre": "bactericidas"
+    },
+    {
+        "id": "4",
+        "nombre": "incesticidas"
+    },
+    {
+        "id": "5",
+        "nombre": "hormonaless"
+    },
+    {
+        "id": "6",
+        "nombre": "foliares"
+    },
+    {
+        "id": "7",
+        "nombre": "biologicos"
+    },
+    {
+        "id": "8",
+        "nombre": "coadyuvntes"
+    }
+]
