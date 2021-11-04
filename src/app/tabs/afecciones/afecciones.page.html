@@ -4,18 +4,18 @@
   </ion-toolbar>
   <ion-toolbar mode="ios" class="ion-text-center" color="secondary">
     <ion-buttons slot="end" mode="ios" class="ion-text-center" color="secondary">
-      <ion-button (click)="triggerAction()" color="primary">
-        <ion-icon slot="icon-only" name="funnel"></ion-icon>
+      <ion-button (click)="triggerAction()" color="light">
+        <ion-icon slot="icon-only" name="filter"></ion-icon>
       </ion-button>
     </ion-buttons>
     <ion-searchbar color="secondary" mode="ios" animated (ionChange)="buscarAfecciones($event)"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
-<ion-content color="light" class="ion-no-border">
-  <ion-list color="light" *ngIf="afecciones" >
+<ion-content color="light" class="ion-no-border" *ngIf="afecciones" >
+  <ion-list color="light">
     <ion-item 
-      *ngFor="let afeccion of afecciones |filtro: textoBuscar" 
+      *ngFor="let afeccion of afecciones |filtro: textoBuscar"
       color="light" 
       (click)="onClick(afeccion)"
       detail>
@@ -23,8 +23,7 @@
       <ion-label color="tertiary"><small>{{afeccion.nombreTecnico}}</small></ion-label>
     </ion-item>
   </ion-list>
-
-<div [hidden]="afecciones">
-  <img src="../../../assets/icon/notfound.svg" alt="">
-</div>
+  <div *ngIf="afecciones.length === 0">
+    <img src="../../../assets/icon/notfound.svg" alt="no hay datos">
+  </div>
 </ion-content>

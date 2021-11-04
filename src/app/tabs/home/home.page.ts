@@ -52,6 +52,7 @@ export class HomePage implements OnInit {
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message,
+      mode: 'ios',
       duration: 2000
     });
     toast.present();

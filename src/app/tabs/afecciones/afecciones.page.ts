@@ -180,7 +180,7 @@ export class AfeccionesPage implements OnInit {
       const actionSheet = await this.actCtrl.create({
       header: 'Filtros',
       subHeader: 'ordenar por',
-      mode: 'ios',
+      mode: 'md',
       cssClass: 'my-custom-class',
       buttons: [{
         text: 'A-Z',
