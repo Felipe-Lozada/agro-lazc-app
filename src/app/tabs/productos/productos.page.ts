@@ -24,6 +24,7 @@ export class ProductosPage implements OnInit {
     const actionSheet = await this.actController.create({
       header: 'Ordenar por',
       cssClass: 'my-custom-class',
+      mode: 'md',
       buttons: [{
         text: 'Nombre',
         handler: () => {

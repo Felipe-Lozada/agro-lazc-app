@@ -45,8 +45,8 @@
           </ion-col>
         </ion-row>
         <ion-row [ngSwitch]="segmentModel">
-          <ion-col size="12">
-            <ng-container class ="product_info" *ngSwitchCase="'producto'">
+          <ion-col size="12" *ngSwitchCase="'producto'">
+            <div class ="product_info">
               <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
               </ion-text>
@@ -62,10 +62,10 @@
                 <h3>Modo de acci&oacute;n.</h3>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
               </ion-text>
-            </ng-container>
+            </div>
           </ion-col>
-          <ion-col size="12" >
-            <ng-container class ="product_info" *ngSwitchCase="'aplicacion'">
+          <ion-col size="12" *ngSwitchCase="'aplicacion'">
+            <div class ="product_info">
               <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
                 <h3>Caracteristicas</h3>
               </ion-text>
@@ -78,7 +78,12 @@
               <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
                 <h3>Descargas</h3>
               </ion-text>
-            </ng-container>
+            </div>
+          </ion-col>
+          <ion-col size="12" *ngSwitchDefault>
+            <div class="product_info">
+              <img src="../../../assets/icon/notfound.svg" alt="no_hay_informacion">
+            </div>
           </ion-col>
         </ion-row>
       </ion-grid>

@@ -21,14 +21,15 @@ export class RecomendacionPage implements OnInit {
   ngOnInit() {
   }
 
-  segmentChanged(e){
-    this.segmentModel= e.detail.value;
+  segmentChanged(ev: any){
+    this.segmentModel= ev.detail.value;
+    console.log(ev);
     console.log(this.segmentModel);
   }
 
   salir(){
-    console.log('gusbai');
     this.dismiss();
+    console.log('gusbai');
   }
 
   hacerPedido(){}

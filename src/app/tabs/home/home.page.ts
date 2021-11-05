@@ -1,6 +1,5 @@
 import { NavController, ToastController, MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 //import { CultivosService } from '../../services/cultivos.service';
 
 @Component({
@@ -10,30 +9,43 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class HomePage implements OnInit {
 
+  // public cultivos = [
+  //   {
+  //     id: 1,
+  //     nombre: 'maiz',
+  //     foto: '../../../assets/img/maiz.jpg'
+  //   },
+  //   { id: 2,
+  //     nombre: 'frijol',
+  //     foto: '../../../assets/img/frijol.jpg'
+  //   },
+  //   {
+  //     id: 3,
+  //     nombre: 'cebada',
+  //     foto: '../../../assets/img/cebada.jpg'
+  //   },
+  //   {
+  //     id: 4,
+  //     nombre: 'haba',
+  //     foto: '../../../assets/img/haba.jpeg'
+  //   },
+  //   {
+  //     id: 5,
+  //     nombre: 'aguacate',
+  //     foto: 'https://www.heb.com.mx/media/catalog/product/cache/9f5ec31302878493d9ed0ac40a398e12/3/9/394060_image.jpg'
+  //   }
+  // ];
+
   public cultivos = [
     {
       id: 1,
       nombre: 'maiz',
       foto: '../../../assets/img/maiz.jpg'
     },
-    { id: 2,
-      nombre: 'frijol',
-      foto: '../../../assets/img/frijol.jpg'
-    },
     {
       id: 3,
       nombre: 'cebada',
       foto: '../../../assets/img/cebada.jpg'
-    },
-    {
-      id: 4,
-      nombre: 'haba',
-      foto: '../../../assets/img/haba.jpeg'
-    },
-    {
-      id: 5,
-      nombre: 'aguacate',
-      foto: 'https://www.heb.com.mx/media/catalog/product/cache/9f5ec31302878493d9ed0ac40a398e12/3/9/394060_image.jpg'
     }
   ];
 
