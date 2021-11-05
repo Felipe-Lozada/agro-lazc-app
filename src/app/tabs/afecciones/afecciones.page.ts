@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { Component, OnInit } from '@angular/core';
 import { AlertController, ModalController, NavController, ActionSheetController } from '@ionic/angular';
 import { RecomendacionPage } from '../../modals/recomendacion/recomendacion.page';
@@ -55,8 +56,11 @@ export class AfeccionesPage implements OnInit {
       id: 5,
       tipo: 'plaga',
       nombre: 'gallina ciega',
-      nombreTecnico: 'frankliniella occidentalis',
-      descripcion: ``
+      nombreTecnico: 'phyllophaga spp',
+      descripcion: `Atacan a un gran número de cultivos, entre los más importantes son Maíz, Papa, Agave, Hortalizas y Pasto.
+      Las larvas son el estadio que causa mayor daño al cultivo y se le conoce comúnmente como Gallina Ciega.
+      Posee gran adaptabilidad al ambiente.
+      Los Adultos son conocidos popularmente como Mayates de Mayo Escarabajos de Junio o Chicatana`
     },
     {
       id: 6,
@@ -74,57 +78,85 @@ export class AfeccionesPage implements OnInit {
       id: 7,
       tipo: 'enfermedad',
       nombre: 'roya',
-      nombreTecnico: 'puccia sorghi',
-      descripcion: ``
+      nombreTecnico: 'puccinia sorghi',
+      descripcion: `Esta enfermedad está ampliamente distribuida por todo el mundo, 
+      en climas subtropicales y templados y en tierras altas donde hay bastante humedad. 
+      La roya común es más conspicua cuando las plantas se acercan a la floración. 
+      Se le puede reconocer por las pústulas pequeñas y pulverulentas, tanto en el haz como en el envés de las hojas. 
+      Las pústulas son de color café claro en las etapas iniciales de la infección; más adelante la epidermis se rompe
+      y las lesiones se vuelven negras a medida que la planta madura. 
+      Las plantas del hospedante alterno (Oxalis spp.) son infectadas frecuentemente con pústulas color anaranjado claro. 
+      Esta es simplemente otra fase del mismo hongo.`
     },
     {
       id: 8,
       tipo: 'enfermedad',
       nombre: 'escaldadura',
-      nombreTecnico: '',
-      descripcion: ``
+      nombreTecnico: 'xanthomonas albilineans',
+      descripcion: `El síntoma clásico en la fase crónica de la enfermedad, se caracteriza por la presencia de rayas blancas finas definidas
+      paralelas a la nervadura principal, clorosis en plantas jóvenes, “encrespamiento” hacia el interior, escaldado de la hoja, 
+      decoloraciones rojizas en el interior del tallo a la altura del nudo o en la base de los brotes.
+      En la fase aguda de la enfermedad se presenta la muerte súbita, esta forma aparece durante cambios de alta precipitación a sequía,
+      pero se limita a variedades altamente susceptibles.
+      En plantas tolerantes a la enfermedad, se puede presentar la fase de latencia,
+      permaneciendo por semanas o meses sin el desarrollo de síntomas, escapando a la detección.
+      `
     },
     {
       id: 9,
       tipo: 'enfermedad',
       nombre: 'pudriciòn radical',
       nombreTecnico: 'fusarium oxysporum',
-      descripcion: ``
+      descripcion: `Los  síntomas observados son similares a los sufridos  por sequía y falta de alimento, 
+      ya que este hongo afecta las raíces reduciendo el volumen de raíces necesario para absorber agua y nutrientes
+      Las raíces de plantas enfermas se observan de color marrón rojizo. 
+      El hongo coloniza la zona del tallo cercana al suelo (corona) causando una decoloración de los tejidos bajo la corteza, 
+      que se extiende al tallo sobre la línea del suelo.
+      Típicamente, los síntomas aparecen primero en una planta y luego en plantas cercanas.
+      Puede  observarse amarillez del follaje, crecimiento lento del arbolito y muerte regresiva.
+      Las plántulas afectadas mueren en pocos días o semanas.`
     },
     {
       id: 10,
       tipo: 'maleza',
       nombre: 'navo',
-      nombreTecnico: 'brassica rapa subsp oleifera',
-      descripcion: ``
+      nombreTecnico: 'brassica rapa',
+      descripcion: `Su propagación es exclusivamente por semilla, que por su tamaño, de 1 a 2 mm de diámetro, y su forma esférica, 
+      se distribuye fácilmente en los lotes, sobre los rastrojos y a través de las maquinarias.
+      La semilla en el suelo permanece viable durante largos períodos formando bancos persistentes, 
+      y la emergencia es sólo parcialmente reducida con labranzas convencionales que entierran las semillas, 
+      no obstante puede emerger de hasta 4-5 cm de profundidad.`
     },
     {
       id: 11,
       tipo: 'maleza',
-      nombre: 'acahual',
-      nombreTecnico: 'tithonia diversifolia',
-      descripcion: ``
+      nombre: 'acahual, acahualillo',
+      nombreTecnico: 'simsia apmlexacaulis',
+      descripcion: `Se ebncuentra en forma vegetativa principalmentye de abril a octubre y floreciendo de mayo a noviembre.
+      Absorbe rapidamente los nutrientes y se progapga de la misma manera en los cultivos`
     },
     {
       id: 12,
       tipo: 'maleza',
       nombre: 'quelite',
-      nombreTecnico: 'amaranthus',
-      descripcion: ``
+      nombreTecnico: 'amaranthus hybridus',
+      descripcion: ` Plántula: primeras hojas simples, entre elípticas y ovales, con borde completo. Planta adulta: altura puede ser mayor a 1 m. Tallo erguido, muy ramificado, casi glabro, que porta estrías longitudinales rojizas.
+      Hojas: ovales, romboédricas, de borde plano, mas o menos glabras. Pequeña dentición con un mucrón en el ápice del limbo. Inflorescencias: alargadas, espiciformes, a menudo ramificadas. Brácteas mucronadas, rígidas y espinosas. Perianto formado por 5 piezas oblongas, lanceoladas y finamente acuminadas. 
+      Frutos: ligeramente arrugados a lo largo y dehiscentes.`
     },
     {
       id: 13,
       tipo: 'maleza',
       nombre: 'avena',
       nombreTecnico: 'avena fatua',
-      descripcion: ``
+      descripcion: `Planta con raíz fibrosa, densamente ramificada; con tallos herbáceos, erectos o, algunas veces, plegados en los nudos inferiores, de 40 a 60 cm de altura; hojas con lígula membranosa, limbo lanceolado de 10 a 20 cm de largo y 1 cm de ancho, ascendente y áspero el tacto; la inflorescencia es una panícula racemosa, abierta, de 10 a 30 cm de largo de espiguillas colgantes, sostenidas por pedicelos delgados, y que contienen 2 a 3 florecillas cubiertas por glumas de 2-3 cm de largo con nervaduras verdes prominentes y con pelos largos de color café en la base`
     },
     {
       id: 14,
       tipo: 'maleza',
       nombre: 'chayotillo',
       nombreTecnico: 'sicyos deppei',
-      descripcion: ``
+      descripcion: `Hierba trepadora, de la familia de las cucurbitáceas, provista de zarcillos; tiene hojas ásperas, palmatilobuladas, de hasta 15 cm en la parte más ancha; sus flores son pequeñas y verdosas; las femeninas crecen en ejes axilares cortos: “Entre los huecos de las cercas asoman sus caritas los quiebraplatos, los chayotillos y las maravillas`
     }
   ];
 
