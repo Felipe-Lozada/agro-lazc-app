@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ModalController } from '@ionic/angular';
+import { ModalController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-recomendacion',
@@ -10,7 +10,21 @@ export class RecomendacionPage implements OnInit {
 
   segmentModel='producto';
 
-  constructor(private modalCtrl: ModalController) {}
+  constructor(
+    private modalCtrl: ModalController,
+    private toastCtrl: ToastController
+  ) {}
+
+  async presentToast() {
+    const toast = await this.toastCtrl.create({
+      message: '<ion-icon name="checkmark"></ion-icon> Producto agregado al carrito',
+      cssClass: 'information-message',
+      duration: 2000,
+      mode: 'ios',
+      color: 'secondary',
+    });
+    toast.present();
+  }
 
   dismiss(){
     this.modalCtrl.dismiss({
@@ -33,4 +47,10 @@ export class RecomendacionPage implements OnInit {
   }
 
   hacerPedido(){}
+
+  addCart(){
+    this.dismiss();
+    this.presentToast();
+    console.log('Producto añadido al carrito ');
+  }
 }

@@ -196,7 +196,8 @@ export class AfeccionesPage implements OnInit {
     async presentAlert(nombre, nombreTecnico, descripcion) {
       const alert = await this.alertCtrl.create({
       header: nombre,
-      mode: 'md',
+      mode: 'ios',
+      cssClass: 'alert-af',
       subHeader: nombreTecnico,
       message: descripcion,
       buttons: [
@@ -229,7 +230,7 @@ export class AfeccionesPage implements OnInit {
       const actionSheet = await this.actCtrl.create({
       header: 'Filtros',
       subHeader: 'ordenar por',
-      mode: 'md',
+      mode: 'ios',
       cssClass: 'my-custom-class',
       buttons: [{
         text: 'A-Z',

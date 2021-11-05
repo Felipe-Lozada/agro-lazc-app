@@ -15,8 +15,10 @@ import { ProductoPipe } from './pipes/producto.pipe';
 import { IonicStorageModule } from '@ionic/storage-angular';
 import { CommonModule } from '@angular/common';
 
+import { RecomendacionPage } from './modals/recomendacion/recomendacion.page';
+
 @NgModule({
-  declarations: [AppComponent, ProductoPipe],
+  declarations: [AppComponent, ProductoPipe, RecomendacionPage],
   entryComponents: [],
   imports: [
     BrowserModule,

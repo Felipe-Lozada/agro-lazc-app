@@ -17,6 +17,8 @@
                 <ion-label color="tertiary">
                     30gr - <ion-chip color="tertiary" mode="ios" outline="true">
                     <ion-label>Herbicidas</ion-label>
+                  </ion-chip> - <ion-chip color="tertiary" mode="ios" outline="true">
+                    <ion-label>Syngenta</ion-label>
                   </ion-chip>
                 </ion-label>
               </ion-card-subtitle>
@@ -48,7 +50,10 @@
           <ion-col size="12" *ngSwitchCase="'producto'">
             <div class ="product_info">
               <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
+                <p>
+                  PEAK® 57 WG es un herbicida selectivo para el control post-emergente de la maleza aquí indicada para los cultivos de trigo, cebada, maíz y sorgo. <br>
+                PEAK® 57 WG es absorbido por las hojas y translocado a través del sistema vascular de la maleza a su sitio de acción en los puntos de crecimiento del follaje y raíces.
+                </p>
               </ion-text>
 
               <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
@@ -60,7 +65,7 @@
 
               <ion-text mode="ios" class="producto_info-desc" class="ion-text-justify">
                 <h3>Modo de acci&oacute;n.</h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum quo quod ipsum fugit sit enim delectus incidunt eaque tenetur nemo aliquid ab distinctio temporibus recusandae esse, cupiditate, in optio alias?
+                  <p>Contacto.</p>
               </ion-text>
             </div>
           </ion-col>
@@ -100,9 +105,9 @@
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="salir()">
+      <ion-button (click)="addCart()">
         <ion-icon slot="end" name="cash-outline"></ion-icon>
-        Comprar
+        Lo quiero
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

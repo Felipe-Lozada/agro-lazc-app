@@ -24,3 +24,25 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-content {
+    main, .inner-scroll{
+        background: #f2f2f2 !important;
+    }
+}
+
+.alert-af .alert-wrapper {
+    .alert-title{
+        text-transform: capitalize;
+    }
+
+    .alert-message{
+        text-align: justify;
+    }
+
+}
+
+.information-message{
+    --color: #f29100;
+}

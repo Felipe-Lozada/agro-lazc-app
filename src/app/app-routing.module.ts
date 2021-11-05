@@ -28,7 +28,15 @@ const routes: Routes = [
     loadChildren: () =>
     import('./modals/recomendacion-enfermedades/recomendacion-enfermedades.module')
     .then( m => m.RecomendacionEnfermedadesPageModule)
-  }
+  },
+  {
+    path: 'carrito',
+    loadChildren: () => import('./modals/carrito/carrito.module').then( m => m.CarritoPageModule)
+  },
+  // ,{
+  //   path: 'recomendacion',
+  //   loadChildren: () => import('./modals/recomendacion/recomendacion.module').then(m => m.RecomendacionPageModule),
+  // }
 ];
 
 @NgModule({
