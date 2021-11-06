@@ -2,14 +2,14 @@
   <ion-toolbar color="secondary">
     <ion-title class="ion-text-center">Cultivos</ion-title>
     <ion-buttons slot="start">
-      <ion-button>
-        <ion-icon name="cart-outline"></ion-icon>
-        <ion-badge color="tertiary" mode="ios">0</ion-badge>
+      <ion-button (click)="verCarrito()">
+        <ion-icon name="cart-outline" slot="icon-only"></ion-icon>
+        <ion-badge color="tertiary" mode="ios" *ngIf="numberItems > 0">{{numberItems}}</ion-badge>
       </ion-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <ion-button (click)="toggleMenu()">
-        <ion-icon name="menu-outline"></ion-icon>
+        <ion-icon name="menu-outline" slot="icon-only"></ion-icon>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

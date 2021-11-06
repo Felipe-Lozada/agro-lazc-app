@@ -1,5 +1,6 @@
 import { Storage } from '@ionic/storage-angular';
 import { Component, OnInit } from '@angular/core';
+import { ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-carrito',
@@ -10,7 +11,14 @@ export class CarritoPage implements OnInit {
 
   public isCartFull: boolean;
   public cartItems: any[];
-  constructor(private storage: Storage) {}
+  constructor(
+    private storage: Storage,
+    private modalCtrl: ModalController
+  ) {}
+
+  dismiss(){
+    this.modalCtrl.dismiss();
+  }
 
   checkCartStatus(){
     this.storage.create();
@@ -32,6 +40,10 @@ export class CarritoPage implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  onClick() {
+    this.dismiss();
   }
 
 }

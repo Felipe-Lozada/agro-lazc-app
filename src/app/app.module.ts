@@ -16,9 +16,10 @@ import { IonicStorageModule } from '@ionic/storage-angular';
 import { CommonModule } from '@angular/common';
 
 import { RecomendacionPage } from './modals/recomendacion/recomendacion.page';
+import { CarritoPage } from './modals/carrito/carrito.page';
 
 @NgModule({
-  declarations: [AppComponent, ProductoPipe, RecomendacionPage],
+  declarations: [AppComponent, ProductoPipe, RecomendacionPage, CarritoPage],
   entryComponents: [],
   imports: [
     BrowserModule,

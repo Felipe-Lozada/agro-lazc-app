@@ -1,5 +1,6 @@
-import { NavController, ToastController, MenuController } from '@ionic/angular';
+import { NavController, ToastController, ModalController, MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
+import { CarritoPage } from 'src/app/modals/carrito/carrito.page';
 //import { CultivosService } from '../../services/cultivos.service';
 
 @Component({
@@ -8,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
+
+  public numberItems = 0;
 
   // public cultivos = [
   //   {
@@ -41,8 +44,10 @@ export class HomePage implements OnInit {
       id: 1,
       nombre: 'maiz',
       foto: '../../../assets/img/maiz.jpg'
-    },
-    {
+    }, { id: 2,
+      nombre: 'frijol',
+      foto: '../../../assets/img/frijol.jpg'
+    },{
       id: 3,
       nombre: 'cebada',
       foto: '../../../assets/img/cebada.jpg'
@@ -60,14 +65,24 @@ export class HomePage implements OnInit {
   constructor(
     private navCtrl: NavController,
     private toastController: ToastController,
-    private menuCtrl: MenuController) {}
+    private menuCtrl: MenuController,
+    private modalCtrl: ModalController
+    ) {}
   async presentToast(message: string) {
     const toast = await this.toastController.create({
       message,
+      color: 'warning',
       mode: 'ios',
       duration: 2000
     });
     toast.present();
+  }
+
+  async presentModal() {
+    const modal = await this.modalCtrl.create({
+      component: CarritoPage
+    });
+    return await modal.present();
   }
 
 
@@ -87,6 +102,10 @@ export class HomePage implements OnInit {
   }
 
   toggleMenu(){
-    this.menuCtrl.toggle('main');
+    this.menuCtrl.toggle();
+  }
+
+  verCarrito(){
+    this.presentModal();
   }
 }
