@@ -1,9 +1,25 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar mode="ios" color="secondary" class="ion-no-border">
     <ion-title>carrito</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="container">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12" class="nothing_msg">
+          <picture class="img-warning">
+            <img src="../../../assets/icon/void.svg" alt="no hay elemento en el carrito de compras">
+          </picture>
+          <ion-text color="tertiary" mode="ios">
+            <h6><i>Vaya aun no tienes elementos en tu carrito de compra</i></h6>
+          </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12"></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>

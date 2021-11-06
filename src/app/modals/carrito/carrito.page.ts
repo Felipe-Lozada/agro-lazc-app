@@ -1,3 +1,4 @@
+import { Storage } from '@ionic/storage-angular';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,7 +8,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarritoPage implements OnInit {
 
-  constructor() { }
+  public isCartFull: boolean;
+  public cartItems: any[];
+  constructor(private storage: Storage) {}
+
+  checkCartStatus(){
+    this.storage.create();
+    this.storage.get('cart').then(
+      (cartItem: any) => {
+        if(cartItem) {
+          this.cartItems = cartItem;
+          this.isCartFull = true;
+          console.log({cartStatus: this.isCartFull});
+        } else {
+          this.isCartFull = false;
+          console.log({cartStatus: this.isCartFull});
+        }
+      }
+    ).catch ( err => {
+      this.isCartFull = false;
+      console.log({cartStatus: this.isCartFull});
+    });
+  }
 
   ngOnInit() {
   }
