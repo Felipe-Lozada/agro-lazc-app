@@ -313,12 +313,12 @@ export class AfeccionesPage implements OnInit {
 
 
     ionViewDidLeave(){
-      this.storage.remove('afeccioneArr');
+      this.storage.remove('afeccionesArr');
       console.log('borrado');
     }
 
     ionViewWillLeave(){
-      this.storage.remove('afeccioneArr');
+      this.storage.remove('afeccionesArr');
       console.log('bai');
     }
 }

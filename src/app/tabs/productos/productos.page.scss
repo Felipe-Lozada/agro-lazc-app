@@ -1,7 +1,6 @@
 .container{
     background: #f2f2f2;
     width: 100%;
-    height: 100%;
 }
 
 .barra-busqueda{
@@ -18,4 +17,28 @@ ion-segment-button{
 
 ion-item ion-label{
     margin: 0 0 0 10px;
+}
+
+ion-grid, ion-list, main{
+    background: #f2f2f2;
+}
+
+.productWrapper{
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.productDetail{
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }

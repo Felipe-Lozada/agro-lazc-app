@@ -17,9 +17,10 @@ import { CommonModule } from '@angular/common';
 
 import { RecomendacionPage } from './modals/recomendacion/recomendacion.page';
 import { CarritoPage } from './modals/carrito/carrito.page';
+import { DetallesProodPage } from './modals/detalles-prood/detalles-prood.page';
 
 @NgModule({
-  declarations: [AppComponent, ProductoPipe, RecomendacionPage, CarritoPage],
+  declarations: [AppComponent, ProductoPipe, RecomendacionPage, CarritoPage, DetallesProodPage],
   entryComponents: [],
   imports: [
     BrowserModule,

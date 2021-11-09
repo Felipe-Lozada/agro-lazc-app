@@ -28,7 +28,11 @@ const routes: Routes = [
     loadChildren: () =>
     import('./modals/recomendacion-enfermedades/recomendacion-enfermedades.module')
     .then( m => m.RecomendacionEnfermedadesPageModule)
-  },
+  }
+  // ,{
+  //   path: 'detalles-prood',
+  //   loadChildren: () => import('./modals/detalles-prood/detalles-prood.module').then( m => m.DetallesProodPageModule)
+  // },
   // {
   //   path: 'carrito',
   //   loadChildren: () => import('./modals/carrito/carrito.module').then( m => m.CarritoPageModule)

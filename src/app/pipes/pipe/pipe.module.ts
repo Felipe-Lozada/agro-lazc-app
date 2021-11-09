@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import {FiltroPipe} from '../filtro.pipe';
+import { FiltroPipe } from '../filtro.pipe';
+
 
 
 @NgModule({

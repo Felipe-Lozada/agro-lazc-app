@@ -80,7 +80,9 @@ export class HomePage implements OnInit {
 
   async presentModal() {
     const modal = await this.modalCtrl.create({
-      component: CarritoPage
+      component: CarritoPage,
+      mode: 'ios',
+      cssClass: 'modalSize'
     });
     return await modal.present();
   }

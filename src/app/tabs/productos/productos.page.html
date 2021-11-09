@@ -1,7 +1,11 @@
 <ion-header color="secondary" mode="ios">
   <ion-toolbar color="secondary" mode="ios" class="ion-text-center">
     <ion-title> Tienda </ion-title>
-    <ion-icon name="cart-outline" slot="end" color="light"></ion-icon>
+    <ion-buttons slot="end">
+      <ion-button (click)="verCarrito()">
+        <ion-icon name="cart-outline" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,7 +14,7 @@
     <ion-grid fixed>
       <ion-row>
         <ion-col size="12" class="barra-busqueda">
-          <ion-searchbar color="secondary" mode="ios" animated ></ion-searchbar>
+          <ion-searchbar color="secondary" mode="ios" animated (ionChange)="buscarProductos($event)"></ion-searchbar>
           <ion-button  mode="ios" class="ion-text-center" color="secondary" (click)="filtrarProductos()">
             <ion-icon slot="icon-only" name="filter"></ion-icon>
           </ion-button>
@@ -19,9 +23,9 @@
       <ion-row>
         <ion-col size="12">
           <ion-segment
-            value="proovedor" 
+            value="herbicidas" 
             scrollable
-            [(ngModel)]="segmentModel"
+            [(ngModel)]="mostrarPor"
             (ionChange)="ordenarProductos($event)" 
             mode="md">
             <ion-segment-button color="secondary" mode="md" value="herbicidas">
@@ -52,115 +56,26 @@
         </ion-col>
         <ion-col size="12">
           <ion-list>
-
-            <ion-list>
-              <ion-item-sliding>
-                <ion-item>
-                  <ion-avatar>
-                    <img src="../../../assets/img/buscar_asesor.svg" />
-                  </ion-avatar>
-                  <ion-label>Pokémon Yellow</ion-label>
-                </ion-item>
-                <ion-item-options side="start">
-                  <ion-item-option mode="ios" color="secondary">
-                    <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
+            <ion-item *ngFor="let producto of productosSinOrdenar" mode="ios" color="light">
+              <div class="productWrapper">
+                <div class="productDetail">
+                  <ion-label color="dark">{{producto.marca}} - {{producto.presentacion}}</ion-label>
+                  <ion-label color="tertiary"><b>{{producto.cartegoria}}</b></ion-label>
+                  <ion-label color="tertiary"><b><small><i>{{producto.proovedor}}</i></small></b></ion-label>
+                  <ion-label color="secondary">${{producto.precio}}</ion-label>
+                </div>
+                <div class="productOptions">
+                  <ion-button expand="block" color="primary" mode="ios" (click)="agregarCarrito(producto)" >
+                    <ion-icon slot="start" name="cart-outline"></ion-icon>
+                    Agregar al carrito
+                  </ion-button>
+                  <ion-button expand="block" color="secondary" mode="ios" (click)="verDetalles(producto)">
+                    <ion-icon slot="start" name="information-circle"></ion-icon>
                     Detalles
-                  </ion-item-option>
-                </ion-item-options>
-            
-                <ion-item-options side="end" color="tertiary">
-                  <ion-item-option mode="ios" color="secondary"> 
-                    <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-                    Agregar al carrito 
-                  </ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>
-                <ion-item>
-                  <ion-avatar>
-                    <img src="../../../assets/img/buscar_asesor.svg" />
-                  </ion-avatar>
-                  <ion-label>Pokémon Yellow</ion-label>
-                </ion-item>
-                <ion-item-options side="start">
-                  <ion-item-option mode="ios" color="secondary">
-                    <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-                    Detalles
-                  </ion-item-option>
-                </ion-item-options>
-            
-                <ion-item-options side="end" color="tertiary">
-                  <ion-item-option mode="ios" color="secondary"> 
-                    <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-                    Agregar al carrito 
-                  </ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>
-                <ion-item>
-                  <ion-avatar>
-                    <img src="../../../assets/img/buscar_asesor.svg" />
-                  </ion-avatar>
-                  <ion-label>Pokémon Yellow</ion-label>
-                </ion-item>
-                <ion-item-options side="start">
-                  <ion-item-option mode="ios" color="secondary">
-                    <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-                    Detalles
-                  </ion-item-option>
-                </ion-item-options>
-            
-                <ion-item-options side="end" color="tertiary">
-                  <ion-item-option mode="ios" color="secondary"> 
-                    <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-                    Agregar al carrito 
-                  </ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>
-              <ion-item>
-                <ion-label>Mega Man X</ion-label>
-              </ion-item>
-                <ion-item-options side="start">
-                  <ion-item-option mode="ios" color="secondary">
-                    <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-                    Detalles
-                  </ion-item-option>
-                </ion-item-options>
-            
-                <ion-item-options side="end" color="tertiary">
-                  <ion-item-option mode="ios" color="secondary"> 
-                    <ion-icon slot="top" ios="ellipsis-horizontal" md="ellipsis-vertical"></ion-icon>
-                    Agregar al carrito 
-                  </ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-
-              <ion-item-sliding>
-                <ion-item>
-                  <ion-avatar>
-                    <img src="../../../assets/img/buscar_asesor.svg" />
-                  </ion-avatar>
-                  <ion-label>Super Mario World</ion-label>
-                </ion-item>
-                <ion-item-options side="start">
-                  <ion-item-option mode="ios" color="tertiary">
-                    <ion-icon slot="top" mode="ios" name="information-circle-outline"></ion-icon>
-                    Detalles
-                  </ion-item-option>
-                </ion-item-options>
-            
-                <ion-item-options side="end">
-                  <ion-item-option mode="ios" color="tertiary"> 
-                    <ion-icon slot="top" mode="ios" name="add-outline"></ion-icon>
-                    Agregar al carrito 
-                  </ion-item-option>
-                </ion-item-options>
-              </ion-item-sliding>
-            </ion-list>
+                  </ion-button>
+                </div>
+              </div>
+            </ion-item>
           </ion-list>
         </ion-col>
       </ion-row>

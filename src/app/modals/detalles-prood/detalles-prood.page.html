@@ -1,0 +1,111 @@
+<ion-header color="secondary" mode="ios" class="ion-no-border"> 
+  <ion-toolbar color="secondary" mode="ios" class="ion-no-border">
+    <ion-buttons slot="secondary">
+      <ion-button fill="solid" (click)="salir()" color="secondary">
+        <ion-icon slot="icon-only" name="chevron-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{marca}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content color="light">
+  <ion-card>
+    <!-- header -->
+    <ion-row>
+      <ion-col size="12">
+        <ion-card-header>
+          <ion-card-subtitle>{{proovedor}}</ion-card-subtitle>
+          <ion-card-title>{{marca}}</ion-card-title>
+          <ion-card-subtitle>
+            <ion-label color="tertiary">
+              {{presentacion}} - <ion-chip color="tertiary" mode="ios" outline="true">
+              <ion-label>{{cartegoria}}</ion-label>
+            </ion-chip> - <ion-chip color="tertiary" mode="ios" outline="true">
+              <ion-label>{{proovedor}}</ion-label>
+            </ion-chip>
+            </ion-label>
+          </ion-card-subtitle>
+        </ion-card-header>
+      </ion-col>
+      <ion-col sizeMd="6" class="ion-text-center">
+        <img class="producto_img" [src]="logo" alt='logo'>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <!-- segment -->
+      <ion-col size="12">
+        <ion-card-content>
+          <ion-segment 
+          value="producto"
+          [(ngModel)]="segmentModel"
+          (ionChange)="segmentChanged($event)"
+          mode="md">
+          <ion-segment-button value="producto" color="secondary" mode="md">
+            <ion-icon name="document-text-outline" color="secondary"></ion-icon>
+            <ion-label color="secondary">Producto</ion-label>
+          </ion-segment-button>
+          <ion-segment-button value="aplicacion" color="secondary" mode="md">
+            <ion-icon name="eyedrop-outline" color="secondary"></ion-icon>
+            <ion-label color="secondary">Aplicaci&oacute;n</ion-label>
+          </ion-segment-button>
+        </ion-segment>          
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+    <ion-row [ngSwitch]="segmentModel">
+      <!-- opciones -->
+      <ion-col size="12" *ngSwitchCase="'producto'">
+        <div class ="product_info">
+          <ion-text mode="ios" class="producto_info-desc ion-text-justify">
+            <p>
+              {{descripcion}}
+            </p>
+          </ion-text>
+
+          <ion-text mode="ios" class="producto_info-desc ion-text-justify">
+            <h3>Modo de acci&oacute;n. </h3>
+            <p>
+              {{modoAccion}}
+            </p>
+          </ion-text>
+        </div>
+      </ion-col>
+      <ion-col size="12" *ngSwitchCase="'aplicacion'">
+        <div class ="product_info">
+          <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
+            <h3>Caracteristicas</h3>
+            <ul>
+              <li>activo: <ion-label>{{activo}}</ion-label></li>
+              <li>dosis: <ion-label>{{dosis}}</ion-label></li>
+              <li>grupo: <ion-label>{{grupo}}</ion-label></li>
+            </ul>
+          </ion-text>
+          <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
+            <h3>Recomendaciones</h3>
+            <p>{{recomendaciones}}</p>
+          </ion-text>
+          <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
+            <h3>Descargas</h3>
+            <ion-list>
+              <ion-item>
+                <ion-label>Hoja de seguridad</ion-label>
+                <ion-button expand="block" fill="clear" shape="round" [href]="hojaSeguridad" download="hoja_seguridad">
+                  <ion-icon name="download"></ion-icon>
+                  Descargar.
+                </ion-button>
+              </ion-item>
+              <ion-item>
+                <ion-label>Ficha t&eacute;cnica</ion-label>
+                <ion-button expand="block" fill="clear" shape="round" [href]="fichaTecnica" download="ficha_tecnica">
+                  <ion-icon name="download"></ion-icon>
+                  Descargar.
+                </ion-button>
+              </ion-item>
+            </ion-list>
+          </ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
