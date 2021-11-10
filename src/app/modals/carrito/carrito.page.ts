@@ -9,8 +9,8 @@ import { ModalController, AlertController } from '@ionic/angular';
 })
 export class CarritoPage implements OnInit {
 
-  public isCartFull: boolean;
-  public cartItems: any[];
+  public isCartFull = false;
+  public cartItems =[];
   constructor(
     private storage: Storage,
     private modalCtrl: ModalController,
@@ -38,7 +38,7 @@ export class CarritoPage implements OnInit {
       }
     ).catch ( err => {
       this.isCartFull = false;
-      console.table({cartStatus: this.isCartFull, err});
+      console.table({cartStatus: this.isCartFull, error:  err});
     });
   }
 
@@ -55,7 +55,8 @@ export class CarritoPage implements OnInit {
 
   vaciarCarrito(){
     console.log('Carrito Vacio');
-    this.storage.remove('cart');
+    this.cartItems=[];
+    this.storage.set('cart', []);
   }
 
 }

@@ -3,7 +3,7 @@
     <ion-title> Tienda </ion-title>
     <ion-buttons slot="end">
       <ion-button (click)="verCarrito()">
-        <ion-icon name="cart-outline" slot="icon-only"></ion-icon>
+        <ion-icon name="cart-outline" slot="icon-only"></ion-icon><ion-badge color="tertiary" mode="ios" *ngIf="numberItems > 0">{{numberItems}}</ion-badge>
       </ion-button>
     </ion-buttons>
   </ion-toolbar>

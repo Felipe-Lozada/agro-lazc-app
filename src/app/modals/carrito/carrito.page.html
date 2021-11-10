@@ -17,7 +17,7 @@
 <ion-content>
   <div class="container">
     <ion-grid fixed>
-      <ion-row>
+      <ion-row *ngIf="cartItems.length === 0" >
         <!-- Mensaje de error -->
         <ion-col size="12" class="nothing_msg">
           <picture class="img-warning">
@@ -28,17 +28,15 @@
           </ion-text>
         </ion-col>
       </ion-row>
-      <ion-row>
-        <ion-col size="12">
-          1
-        </ion-col>
-        <ion-col size="12">
-          2
-        </ion-col>
-        <ion-col size="12">
-          3
-        </ion-col>
+      <ion-row *ngIf="cartItems.length > 0">
+        <ion-list>
+          <ion-item *ngFor="let cartItem of cartItems" >
+            <ion-label>{{cartItem.marca}}</ion-label>
+          </ion-item>
+        </ion-list>
         <ion-row>
+          <ion-col size="5"><b>Items: </b></ion-col>
+          <ion-col size="5" offset="2"><b><u>{{cartItems.length}}</u></b></ion-col>
           <ion-col size="5"><b>Subtotal: </b></ion-col>
           <ion-col size="5" offset="2"><b><u>$0.00</u></b></ion-col>
           <ion-col size="5"><b>IVA</b></ion-col>

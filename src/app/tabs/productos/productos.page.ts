@@ -16,7 +16,7 @@ export class ProductosPage implements OnInit {
   public productosArr: any[];
   public productosSinOrdenar: any[];
   public cartItems = [];
-
+  public numberItems = 0;
   constructor(
     private catService: CategoriasService,
     private actController: ActionSheetController,
@@ -30,8 +30,19 @@ export class ProductosPage implements OnInit {
     .catch(err => console.error(err));
 
     this.obternerProductos();
+    this.verSiHayProductos();
   }
 
+  // ver si hay items en el carrito
+  verSiHayProductos(){
+    this.storage.create();
+    this.storage.get('cart')
+    .then((res: any) => (res.length > 0) ? this.numberItems = res : this.numberItems = 0)
+    .catch(err => {
+      console.error(err);
+      this.numberItems = 0;
+    });
+  }
 
   obternerProductos(){
     this.prodService.obtenerTodosLosProductos()
@@ -127,6 +138,7 @@ export class ProductosPage implements OnInit {
 
   ngOnInit() {
   }
+
 
   buscarProductos(e) {
     console.log(e.detail.value);

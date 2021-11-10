@@ -1,6 +1,7 @@
 import { NavController, ToastController, ModalController, MenuController } from '@ionic/angular';
 import { Component, OnInit } from '@angular/core';
 import { CarritoPage } from 'src/app/modals/carrito/carrito.page';
+import { Storage } from '@ionic/storage-angular';
 //import { CultivosService } from '../../services/cultivos.service';
 
 @Component({
@@ -66,17 +67,31 @@ export class HomePage implements OnInit {
     private navCtrl: NavController,
     private toastController: ToastController,
     private menuCtrl: MenuController,
-    private modalCtrl: ModalController
-    ) {}
-  async presentToast(message: string) {
-    const toast = await this.toastController.create({
-      message,
-      color: 'warning',
-      mode: 'ios',
-      duration: 2000
-    });
-    toast.present();
-  }
+    private modalCtrl: ModalController,
+    private storage: Storage
+    ) {
+      this.verSiHayProductos();
+    }
+
+    verSiHayProductos(){
+      this.storage.create();
+      this.storage.get('cart')
+      .then((res: any) => (res.length > 0) ? this.numberItems = res : this.numberItems = 0)
+      .catch(err => {
+        console.error(err);
+        this.numberItems = 0;
+      });
+    }
+
+    async presentToast(message: string) {
+      const toast = await this.toastController.create({
+        message,
+        color: 'warning',
+        mode: 'ios',
+        duration: 2000
+      });
+      toast.present();
+    }
 
   async presentModal() {
     const modal = await this.modalCtrl.create({
