@@ -1,7 +1,7 @@
 import { Storage } from '@ionic/storage-angular';
 import { Component, OnInit } from '@angular/core';
 import { CategoriasService } from 'src/app/services/categorias.service';
-import { ActionSheetController, ModalController } from '@ionic/angular';
+import { ActionSheetController, ModalController, ToastController } from '@ionic/angular';
 import { CarritoPage } from 'src/app/modals/carrito/carrito.page';
 import { DetallesProodPage } from 'src/app/modals/detalles-prood/detalles-prood.page';
 import { ProductosService } from './../../services/productos.service';
@@ -15,12 +15,13 @@ export class ProductosPage implements OnInit {
   public mostrarPor: string;
   public productosArr: any[];
   public productosSinOrdenar: any[];
-  public cartItems: any[];
+  public cartItems = [];
 
   constructor(
     private catService: CategoriasService,
     private actController: ActionSheetController,
     private modalCtrl: ModalController,
+    private toastCtrl: ToastController,
     private prodService: ProductosService,
     private storage: Storage
   ) {
@@ -114,6 +115,16 @@ export class ProductosPage implements OnInit {
     console.log('onDidDismiss resolved with role', role);
   }
 
+  async presentToast(message: string) {
+    const toast = await this.toastCtrl.create({
+      message,
+      color: 'secondary',
+      mode: 'ios',
+      duration: 2000
+    });
+    toast.present();
+  }
+
   ngOnInit() {
   }
 
@@ -122,7 +133,19 @@ export class ProductosPage implements OnInit {
   }
 
   verCarrito() {
-    this.presentModal();
+    this.storage.set('cart', this.cartItems)
+    .then((res: any)=>{
+      if(res.length > 0) {
+        setTimeout(() => {
+          this.cartItems = [];
+          this.presentToast('Agregado al carrito');
+        }, 2100);
+        this.presentModal();
+      }
+    })
+    .catch(err => console.error(err));
+    //this.presentModal();
+
   }
 
   agregarCarrito(producto){
@@ -142,18 +165,22 @@ export class ProductosPage implements OnInit {
 
   ordenarProductos(ev: any){
     this.mostrarPor= ev.detail.value;
-    console.log(ev);
+    console.log(typeof(ev.detail.value));
     console.log(this.mostrarPor);
   }
 
   ordenarPorNombre(){
     const porductosPorNombre = this.productosSinOrdenar.sort((a, b) => (b.marca < a.marca) ? 1 : -1);
     console.log(porductosPorNombre);
+    this.productosSinOrdenar=[];
+    this.productosSinOrdenar = porductosPorNombre;
   }
 
   ordenarPorProovedor(){
     const porductosPorProovedor = this.productosSinOrdenar.sort((a, b) => (b.proovedor < a.proovedor) ? 1 : -1);
     console.log(porductosPorProovedor);
+    this.productosSinOrdenar=[];
+    this.productosSinOrdenar = porductosPorProovedor;
   }
 
   ordenarPorPrecio(){

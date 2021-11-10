@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
+import { DocumentViewerOptions } from '@ionic-native/document-viewer/ngx';
 @Component({
   selector: 'app-detalles-prood',
   templateUrl: './detalles-prood.page.html',
@@ -30,15 +31,19 @@ export class DetallesProodPage implements OnInit {
   public segmentModel: string;
 
   constructor(
-    private modalCtrl: ModalController
-  ) { }
+    private modalCtrl: ModalController,
+    private document: DocumentViewer,
+  ) {
+    this.segmentModel = 'producto';
+    console.log(this.segmentModel);
+  }
 
   ngOnInit() {
   }
 
   dismiss(){
     this.modalCtrl.dismiss({
-      'dismissed': true
+      dismissed: true
     });
   }
 
@@ -51,5 +56,21 @@ export class DetallesProodPage implements OnInit {
   salir(){
     console.log('Bye');
     this.dismiss();
+  }
+
+  decargarFicha() {
+    const options: DocumentViewerOptions = {
+      title: 'ficha_tecnica'
+    };
+
+    this.document.viewDocument(this.fichaTecnica, 'application/pdf', options);
+  }
+
+  decargarHoja() {
+    const options: DocumentViewerOptions = {
+      title: 'hoja_tecnica'
+    };
+
+    this.document.viewDocument(this.hojaSeguridad, 'application/pdf', options);
   }
 }

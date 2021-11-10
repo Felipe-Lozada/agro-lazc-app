@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ScreenOrientation } from '@ionic-native/screen-orientation/ngx';
+import { DocumentViewer } from '@ionic-native/document-viewer/ngx';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -34,7 +35,7 @@ import { DetallesProodPage } from './modals/detalles-prood/detalles-prood.page';
     ReactiveFormsModule,
     IonicStorageModule.forRoot()
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenOrientation],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }, ScreenOrientation, DocumentViewer],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

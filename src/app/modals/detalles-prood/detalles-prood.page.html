@@ -22,7 +22,7 @@
               {{presentacion}} - <ion-chip color="tertiary" mode="ios" outline="true">
               <ion-label>{{cartegoria}}</ion-label>
             </ion-chip> - <ion-chip color="tertiary" mode="ios" outline="true">
-              <ion-label>{{proovedor}}</ion-label>
+              <ion-label>{{cultivo}}</ion-label>
             </ion-chip>
             </ion-label>
           </ion-card-subtitle>
@@ -78,7 +78,7 @@
             <ul>
               <li>activo: <ion-label>{{activo}}</ion-label></li>
               <li>dosis: <ion-label>{{dosis}}</ion-label></li>
-              <li>grupo: <ion-label>{{grupo}}</ion-label></li>
+              <li *ngIf="grupo" >grupo: <ion-label>{{grupo}}</ion-label></li>
             </ul>
           </ion-text>
           <ion-text mode="ios" class="producto_info-desc ion-text-jusify">
@@ -90,14 +90,14 @@
             <ion-list>
               <ion-item>
                 <ion-label>Hoja de seguridad</ion-label>
-                <ion-button expand="block" fill="clear" shape="round" [href]="hojaSeguridad" download="hoja_seguridad">
+                <ion-button expand="block" fill="clear" shape="round" (click)="decargarHoja()">
                   <ion-icon name="download"></ion-icon>
                   Descargar.
                 </ion-button>
               </ion-item>
               <ion-item>
                 <ion-label>Ficha t&eacute;cnica</ion-label>
-                <ion-button expand="block" fill="clear" shape="round" [href]="fichaTecnica" download="ficha_tecnica">
+                <ion-button expand="block" fill="clear" shape="round" (click)="decargarFicha()">
                   <ion-icon name="download"></ion-icon>
                   Descargar.
                 </ion-button>

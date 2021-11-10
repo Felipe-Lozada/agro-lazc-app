@@ -3,15 +3,33 @@
         "id": "1",
         "cartegoria": "fungicidas",
         "proovedor": "fmc",
-        "presentacion": "",
-        "marca": "",
-        "activo": "",
-        "precio": "",
-        "cultivo": "maiz",
-        "recomendaciones": "",
-        "fichaTecnica": "",
-        "modoAccion": "",
-        "dosis": ""
+        "presentacion": "1L",
+        "marca": "soldier",
+        "activo": "azoxistrobin, flutriafol",
+        "recomendaciones": "Aplicar cuando las condiciones sean favorables para la enfermedad y la incidencia o severidad no sea mayor a 3%. Realizar 2 aplicaciones al follaje con un intervalo de 14 días.",
+        "fichaTecnica": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2021/08/FT-Soldier-250-SC-250121.pdf",
+        "hojaSeguridad": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2019/12/HDS-Soldier-250-SC.pdf",
+        "modoAccion": "SOLDIER 250 SC es un fungicida que al ser aplicado en las hojas, es absorbido presentando movimiento sistémico y translaminar .",
+        "dosis": "350-650 ml/ha",
+        "descripcion": "SOLDIER® 250 SC es el nuevo fungicida inteligente de FMC® que combina tecnología de doble podre, que otorga el beneficio de tener dos modos de acción complementarios entre sí, para obtener efecto contundente de prevención y control de las enfermedades registradas.",
+        "logo": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2021/06/SOLDIER-WEB.png",
+        "cultivo": "maiz"
+    },
+    {
+        "id": "1",
+        "cartegoria": "fungicidas",
+        "proovedor": "fmc",
+        "presentacion": "1L",
+        "marca": "zoll",
+        "activo": "tebuconazole",
+        "recomendaciones": "Realizar dos aplicaciones al follaje a intervalo de 7 días, inicial las aplicaciones cuando el cultivo este en la etapa fenológica V6 y V7.",
+        "fichaTecnica": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2021/08/FT-Soldier-250-SC-250121.pdf",
+        "hojaSeguridad": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2019/12/HDS-Soldier-250-SC.pdf",
+        "modoAccion": "SOLDIER 250 SC es un fungicida que al ser aplicado en las hojas, es absorbido presentando movimiento sistémico y translaminar .",
+        "dosis": "300-400 L/ha",
+        "descripcion": "Es un fungicida de amplio espectro con actividad preventiva, curativa y erradicante, que actúa de forma sistémica, esta formulado a base de tebuconazol al 50%, ingrediente activo perteneciente a la familia de los triazoles.",
+        "logo": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2021/06/WEB-500x200.jpg",
+        "cultivo": "maiz"
     },
     {
         "id": "2",
@@ -29,21 +47,7 @@
     },
     {
         "id": "3",
-        "cartegoria": "bactericidas",
-        "proovedor": "fmc",
-        "presentacion": "",
-        "marca": "",
-        "activo": "",
-        "precio": "",
-        "cultivo": "maiz",
-        "recomendaciones": "",
-        "fichaTecnica": "",
-        "modoAccion": "",
-        "dosis": ""
-    },
-    {
-        "id": "4",
-        "cartegoria": "incesticidas",
+        "cartegoria": "insecticidas",
         "proovedor": "fmc",
         "presentacion": "1L",
         "marca": "Coragen",
@@ -61,7 +65,7 @@
     },
     {
         "id": "4",
-        "cartegoria": "incesticidas",
+        "cartegoria": "insecticidas",
         "proovedor": "fmc",
         "presentacion": "200ml",
         "marca": "Coragen",
@@ -73,11 +77,12 @@
         "dosis": "0.1-0.15 L/ha 7d",
         "descripcion": "Coragen® es un potente insecticida de última generación que pertenece al nuevo grupo de las Diamidas Antranílicas. Está compuesto por el ingrediente activo clorantraniliprol (Rynaxypyr®*) y formulado con 200 g i.a./L como suspensión concentrada acuosa.",
         "grupo": "28/diamidas",
-        "logo": "http://www.agrolead.com.bo/images/Coragen.png"
+        "logo": "http://www.agrolead.com.bo/images/Coragen.png",
+        "cultivo": "maiz"
     },
     {
-        "id": "4",
-        "cartegoria": "incesticidas",
+        "id": "5",
+        "cartegoria": "insecticidas",
         "proovedor": "fmc",
         "presentacion": "100ml",
         "marca": "Coragen",
@@ -94,7 +99,7 @@
         "logo": "http://www.agrolead.com.bo/images/Coragen.png"
     },
     {
-        "id": "5",
+        "id": "6",
         "cartegoria": "hormonales",
         "proovedor": "fmc",
         "presentacion": "",
@@ -108,22 +113,8 @@
         "dosis": ""
     },
     {
-        "id": "6",
-        "cartegoria": "foliares",
-        "proovedor": "fmc",
-        "presentacion": "",
-        "marca": "",
-        "activo": "",
-        "precio": "",
-        "cultivo": "maiz",
-        "recomendaciones": "",
-        "fichaTecnica": "",
-        "modoAccion": "",
-        "dosis": ""
-    },
-    {
         "id": "7",
-        "cartegoria": "biologicos",
+        "cartegoria": "coadyuvantes",
         "proovedor": "fmc",
         "presentacion": "",
         "marca": "",
@@ -137,20 +128,6 @@
     },
     {
         "id": "8",
-        "cartegoria": "coadyuvntes",
-        "proovedor": "fmc",
-        "presentacion": "",
-        "marca": "",
-        "activo": "",
-        "precio": "",
-        "cultivo": "maiz",
-        "recomendaciones": "",
-        "fichaTecnica": "",
-        "modoAccion": "",
-        "dosis": ""
-    },
-    {
-        "id": "9",
         "cartegoria": "fungicidas",
         "proovedor": "basf",
         "presentacion": "",
@@ -164,7 +141,7 @@
         "dosis": ""
     },
     {
-        "id": "10",
+        "id": "9",
         "cartegoria": "herbicidas",
         "proovedor": "basf",
         "presentacion": "",
@@ -178,7 +155,7 @@
         "dosis": ""
     },
     {
-        "id": "11",
+        "id": "10",
         "cartegoria": "bactericidas",
         "proovedor": "basf",
         "presentacion": "",
@@ -193,7 +170,7 @@
     },
     {
         "id": "12",
-        "cartegoria": "incesticidas",
+        "cartegoria": "insecticidas",
         "proovedor": "basf",
         "presentacion": "",
         "marca": "",
@@ -249,7 +226,7 @@
     },
     {
         "id": "16",
-        "cartegoria": "coadyuvntes",
+        "cartegoria": "coadyuvantes",
         "proovedor": "basf",
         "presentacion": "",
         "marca": "",
@@ -305,7 +282,7 @@
     },
     {
         "id": "20",
-        "cartegoria": "incesticidas",
+        "cartegoria": "insecticidas",
         "proovedor": "syngenta",
         "presentacion": "",
         "marca": "",
@@ -361,7 +338,7 @@
     },
     {
         "id": "24",
-        "cartegoria": "coadyuvntes",
+        "cartegoria": "coadyuvantes",
         "proovedor": "syngenta",
         "presentacion": "",
         "marca": "",
@@ -376,15 +353,17 @@
         "id": "25",
         "cartegoria": "fungicidas",
         "proovedor": "fmc",
-        "presentacion": "",
-        "marca": "",
-        "activo": "",
-        "precio": "",
-        "cultivo": "cebada",
-        "recomendaciones": "",
-        "fichaTecnica": "",
-        "modoAccion": "",
-        "dosis": ""
+        "presentacion": "1L",
+        "marca": "soldier",
+        "activo": "azoxistrobin, flutriafol",
+        "recomendaciones": "Aplicar cuando las condiciones sean favorables para la enfermedad y la incidencia o severidad no sea mayor a 3%. Realizar 2 aplicaciones al follaje con un intervalo de 14 días.",
+        "fichaTecnica": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2021/08/FT-Soldier-250-SC-250121.pdf",
+        "hojaSeguridad": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2019/12/HDS-Soldier-250-SC.pdf",
+        "modoAccion": "SOLDIER 250 SC es un fungicida que al ser aplicado en las hojas, es absorbido presentando movimiento sistémico y translaminar .",
+        "dosis": "350-650 ml/ha",
+        "descripcion": "SOLDIER® 250 SC es el nuevo fungicida inteligente de FMC® que combina tecnología de doble podre, que otorga el beneficio de tener dos modos de acción complementarios entre sí, para obtener efecto contundente de prevención y control de las enfermedades registradas.",
+        "logo": "https://www.fmcagroquimica.com.mx/wp-content/uploads/2021/06/SOLDIER-WEB.png",
+        "cultivo": "cebada"
     },
     {
         "id": "26",
@@ -417,7 +396,7 @@
     },
     {
         "id": "28",
-        "cartegoria": "incesticidas",
+        "cartegoria": "insecticidas",
         "proovedor": "fmc",
         "presentacion": "",
         "marca": "",
@@ -473,7 +452,7 @@
     },
     {
         "id": "32",
-        "cartegoria": "coadyuvntes",
+        "cartegoria": "coadyuvantes",
         "proovedor": "fmc",
         "presentacion": "",
         "marca": "",
@@ -529,7 +508,7 @@
     },
     {
         "id": "36",
-        "cartegoria": "incesticidas",
+        "cartegoria": "insecticidas",
         "proovedor": "basf",
         "presentacion": "",
         "marca": "",
@@ -585,7 +564,7 @@
     },
     {
         "id": "40",
-        "cartegoria": "coadyuvntes",
+        "cartegoria": "coadyuvantes",
         "proovedor": "basf",
         "presentacion": "",
         "marca": "",
@@ -641,7 +620,7 @@
     },
     {
         "id": "44",
-        "cartegoria": "incesticidas",
+        "cartegoria": "insecticidas",
         "proovedor": "syngenta",
         "presentacion": "",
         "marca": "",
@@ -696,3 +675,6 @@
         "dosis": ""
     }
 ]
+
+
+

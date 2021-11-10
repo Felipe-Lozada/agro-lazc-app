@@ -27,18 +27,18 @@ export class CarritoPage implements OnInit {
     this.storage.create();
     this.storage.get('cart').then(
       (cartItem: any) => {
-        if(cartItem) {
+        if(cartItem.length > 0) {
           this.cartItems = cartItem;
           this.isCartFull = true;
-          console.log({cartStatus: this.isCartFull});
-        } else {
+          console.table({cartStatus: this.isCartFull});
+        } else{
           this.isCartFull = false;
-          console.log({cartStatus: this.isCartFull});
+          console.table({cartStatus: this.isCartFull});
         }
       }
     ).catch ( err => {
       this.isCartFull = false;
-      console.log({cartStatus: this.isCartFull});
+      console.table({cartStatus: this.isCartFull, err});
     });
   }
 
@@ -55,6 +55,7 @@ export class CarritoPage implements OnInit {
 
   vaciarCarrito(){
     console.log('Carrito Vacio');
+    this.storage.remove('cart');
   }
 
 }
