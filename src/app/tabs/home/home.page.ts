@@ -69,14 +69,16 @@ export class HomePage implements OnInit {
     private menuCtrl: MenuController,
     private modalCtrl: ModalController,
     private storage: Storage
-    ) {
+    ) {}
+
+    ionViewWillEnter(){
       this.verSiHayProductos();
     }
 
     verSiHayProductos(){
       this.storage.create();
       this.storage.get('cart')
-      .then((res: any) => (res.length > 0) ? this.numberItems = res : this.numberItems = 0)
+      .then((res: any) => (res.length > 0) ? this.numberItems = res.length : this.numberItems = 0)
       .catch(err => {
         console.error(err);
         this.numberItems = 0;

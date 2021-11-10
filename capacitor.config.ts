@@ -2,7 +2,7 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.agrolazc.store',
-  appName: 'agro-lazc-app',
+  appName: 'AgroLazc App',
   webDir: 'www',
   bundledWebRuntime: false
 };

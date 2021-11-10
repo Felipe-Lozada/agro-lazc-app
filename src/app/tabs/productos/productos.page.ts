@@ -24,20 +24,18 @@ export class ProductosPage implements OnInit {
     private toastCtrl: ToastController,
     private prodService: ProductosService,
     private storage: Storage
-  ) {
-    this.catService.obtenerCategorias()
-    .then((categorias: any[]) => this.categoriasArray = categorias)
-    .catch(err => console.error(err));
+  ) {}
 
-    this.obternerProductos();
+  ionViewWillEnter(){
     this.verSiHayProductos();
+    this.obternerProductos();
   }
 
   // ver si hay items en el carrito
   verSiHayProductos(){
     this.storage.create();
     this.storage.get('cart')
-    .then((res: any) => (res.length > 0) ? this.numberItems = res : this.numberItems = 0)
+    .then((res: any) => (res.length > 0) ? this.numberItems = res.length : this.numberItems = 0)
     .catch(err => {
       console.error(err);
       this.numberItems = 0;
