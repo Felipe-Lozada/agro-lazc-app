@@ -2,17 +2,73 @@
 side="end" 
 menuId="first" 
 contentId="main"
-type="push">
-<ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>Perfil</ion-title>
-  </ion-toolbar>
-</ion-header>
+type="overlay">
 <ion-content>
   <div class="container">
-    <ion-list color="light">
-
-    </ion-list>      
+    <ion-list color="light" mode="ios">
+      <ion-list-header color="secondary" class="ion-no-border ion-no-margin ion-text-center">
+        <ion-label color="light" mode="ios"> <h1>Usuario</h1> </ion-label>
+      </ion-list-header>
+      <ion-item mode="ios" color="light">
+          <ion-button mode="md" (click)="salirDeLaApp()" color="secondary" fill="outline">
+            <ion-label mode="ios" color="secondary"> Perfil </ion-label>
+            <ion-icon name="person-outline" slot="start" color="secondary" mode="ios"></ion-icon>
+          </ion-button>    
+      </ion-item>
+      <ion-item mode="ios" color="light">
+        <ion-button mode="md" (click)="salirDeLaApp()" color="secondary" fill="outline">
+          <ion-label mode="ios" color="secondary"> Pedidos </ion-label>
+          <ion-icon name="bag-outline" slot="start" color="secondary" mode="ios"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item mode="ios" color="light">
+        <ion-button mode="md" (click)="salirDeLaApp()" color="secondary" fill="outline">
+          <ion-label mode="ios" color="secondary"> Asesorias </ion-label>
+          <ion-icon name="document-outline" slot="start" color="secondary" mode="ios"></ion-icon>
+        </ion-button>      
+      </ion-item>
+      <ion-item mode="ios" color="light">
+        <ion-button mode="md" (click)="salirDeLaApp()" color="secondary" fill="outline">
+          <ion-label mode="ios" color="secondary"> Formas de pago </ion-label>
+          <ion-icon name="card-outline" slot="start" color="secondary" mode="ios"></ion-icon>
+        </ion-button>      
+      </ion-item>
+      <ion-item mode="ios" color="light">
+        <ion-button mode="md" (click)="salirDeLaApp()" color="secondary" fill="outline">
+          <ion-label mode="ios" color="secondary"> Direcciones </ion-label>
+          <ion-icon name="location-outline" slot="start" color="secondary" mode="ios"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list> 
+    <ion-list color="light" mode="ios">
+      <ion-list-header>
+        <ion-label color="dark" mode="ios"> <h1>M&aacute;s info</h1> </ion-label>
+      </ion-list-header>
+      <ion-item mode="ios" color="light">
+        <ion-button mode="md" (click)="salirDeLaApp()" color="secondary" fill="outline">
+          <ion-label mode="ios" color="secondary"> Acerca de </ion-label>
+          <ion-icon name="information-outline" slot="start" color="secondary" mode="ios"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <ion-item mode="ios" color="light">
+        <ion-button mode="md" (click)="salirDeLaApp()" color="secondary" fill="outline">
+          <ion-label mode="ios" color="secondary"> Politica de privacidad </ion-label>
+          <ion-icon name="lock-closed-outline" slot="start" color="secondary" mode="ios"></ion-icon>
+        </ion-button>
+      </ion-item>
+      <!-- <ion-item mode="ios" color="light">
+        <ion-button mode="md" (click)="salirDeLaApp()" color="secondary" fill="outline">
+          <ion-label mode="ios" color="secondary"> Salir </ion-label>
+          <ion-icon name="log-out-outline" color="secondary" mode="ios"></ion-icon>
+        </ion-button>
+      </ion-item> -->
+      <!-- <ion-item mode="ios" color="light">
+        <ion-label mode="ios" color="secondary"> Direcciones </ion-label>
+      </ion-item>
+      <ion-item mode="ios" color="light">
+        <ion-label mode="ios" color="secondary"> Acerca de </ion-label>
+      </ion-item> -->
+    </ion-list>        
   </div>
 
 </ion-content>

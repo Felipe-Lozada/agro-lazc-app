@@ -28,6 +28,30 @@ const routes: Routes = [
     loadChildren: () =>
     import('./modals/recomendacion-enfermedades/recomendacion-enfermedades.module')
     .then( m => m.RecomendacionEnfermedadesPageModule)
+  },
+  {
+    path: 'privacidad',
+    loadChildren: () => import('./modals/privacidad/privacidad.module').then( m => m.PrivacidadPageModule)
+  },
+  {
+    path: 'acerca',
+    loadChildren: () => import('./modals/acerca/acerca.module').then( m => m.AcercaPageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./modals/perfil/perfil.module').then( m => m.PerfilPageModule)
+  },
+  {
+    path: 'pedidos',
+    loadChildren: () => import('./modals/pedidos/pedidos.module').then( m => m.PedidosPageModule)
+  },
+  {
+    path: 'pagos',
+    loadChildren: () => import('./pages/pagos/pagos.module').then( m => m.PagosPageModule)
+  },
+  {
+    path: 'direcciones',
+    loadChildren: () => import('./pages/direcciones/direcciones.module').then( m => m.DireccionesPageModule)
   }
   // ,{
   //   path: 'detalles-prood',
