@@ -90,14 +90,14 @@
             <ion-list>
               <ion-item>
                 <ion-label>Hoja de seguridad</ion-label>
-                <ion-button expand="block" fill="clear" shape="round" (click)="decargarHoja()">
+                <ion-button expand="block" fill="clear" shape="round" download="hoja" [href]="hojaSeguridad">
                   <ion-icon name="download"></ion-icon>
                   Descargar.
                 </ion-button>
               </ion-item>
               <ion-item>
                 <ion-label>Ficha t&eacute;cnica</ion-label>
-                <ion-button expand="block" fill="clear" shape="round" (click)="decargarFicha()">
+                <ion-button expand="block" fill="clear" shape="round" download="ficha" [href]="fichaTecnica">
                   <ion-icon name="download"></ion-icon>
                   Descargar.
                 </ion-button>

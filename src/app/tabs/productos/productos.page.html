@@ -59,10 +59,10 @@
             <ion-item *ngFor="let producto of productosSinOrdenar" mode="ios" color="light">
               <div class="productWrapper">
                 <div class="productDetail">
-                  <ion-label color="dark">{{producto.marca}} - {{producto.presentacion}}</ion-label>
-                  <ion-label color="tertiary"><b>{{producto.cartegoria}}</b></ion-label>
-                  <ion-label color="tertiary"><b><small><i>{{producto.proovedor}}</i></small></b></ion-label>
-                  <ion-label color="secondary">${{producto.precio}}</ion-label>
+                  <ion-label mode="ios" color="dark" class="productDetail_title">{{producto.marca}} - {{producto.presentacion}}</ion-label>
+                  <ion-label mode="ios" color="tertiary" class="productDetail_category"><b>{{producto.cartegoria}}</b></ion-label>
+                  <ion-label mode="ios" color="tertiary" class="productDetail_provider"><b><small><i>{{producto.proovedor}}</i></small></b></ion-label>
+                  <ion-label mode="ios" color="secondary" class="productDetail_price">${{producto.precio}}</ion-label>
                 </div>
                 <div class="productOptions">
                   <ion-button expand="block" color="primary" mode="ios" (click)="agregarCarrito(producto)" >

@@ -83,7 +83,8 @@ export class ProductosPage implements OnInit {
         dosis: productoD.dosis,
         descripcion: productoD.descripcion,
         grupo: productoD.grupo,
-        logo: productoD.logo
+        logo: productoD.logo,
+        existencias: productoD.existencias
       }
     });
     return await modal.present();
@@ -146,9 +147,10 @@ export class ProductosPage implements OnInit {
     this.storage.set('cart', this.cartItems)
     .then((res: any)=>{
       if(res.length > 0) {
+        this.presentToast('Agregado al carrito');
         setTimeout(() => {
           this.cartItems = [];
-          this.presentToast('Agregado al carrito');
+          this.numberItems = 0;
         }, 2100);
         this.presentModal();
       }
@@ -161,6 +163,7 @@ export class ProductosPage implements OnInit {
   agregarCarrito(producto){
     console.log(producto);
     this.cartItems.push(producto);
+    this.numberItems = this.cartItems.length;
     console.log(this.cartItems);
   }
 
@@ -194,9 +197,10 @@ export class ProductosPage implements OnInit {
   }
 
   ordenarPorPrecio(){
-    // const porductosPorNombre = this.productosSinOrdenar.sort((a, b) => (b.marca < a.marca) ? 1 : -1);
-    // console.log(porductosPorNombre);
-    console.log('c');
+    const porductosPorPrecio = this.productosSinOrdenar.sort((a, b) => (b.marca < a.marca) ? 1 : -1);
+    console.log(porductosPorPrecio);
+    this.productosSinOrdenar=[];
+    this.productosSinOrdenar = porductosPorPrecio;
   }
 
 }
