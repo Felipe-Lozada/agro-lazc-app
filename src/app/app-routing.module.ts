@@ -52,6 +52,10 @@ const routes: Routes = [
   {
     path: 'direcciones',
     loadChildren: () => import('./pages/direcciones/direcciones.module').then( m => m.DireccionesPageModule)
+  },
+  {
+    path: 'chekout',
+    loadChildren: () => import('./pages/chekout/chekout.module').then( m => m.ChekoutPageModule)
   }
   // ,{
   //   path: 'detalles-prood',

@@ -1,6 +1,6 @@
 import { Storage } from '@ionic/storage-angular';
 import { Component, OnInit } from '@angular/core';
-import { ModalController, AlertController } from '@ionic/angular';
+import { ModalController, AlertController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-carrito',
@@ -11,10 +11,12 @@ export class CarritoPage implements OnInit {
 
   public isCartFull = false;
   public cartItems =[];
+
   constructor(
     private storage: Storage,
     private modalCtrl: ModalController,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private navCtrl: NavController
   ) {
     this.checkCartStatus();
   }
@@ -51,6 +53,8 @@ export class CarritoPage implements OnInit {
 
   comprar(){
     console.log('a comprar');
+    this.navCtrl.navigateForward('checkout');
+    this.storage.set('chekout', this.cartItems);
   }
 
   vaciarCarrito(){

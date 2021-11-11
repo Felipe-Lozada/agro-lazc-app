@@ -201,13 +201,13 @@ export class AfeccionesPage implements OnInit {
       subHeader: nombreTecnico,
       message: descripcion,
       buttons: [
-        {
-          text: 'Producto recomendado',
-          handler: () => {
-            console.log('Confirm Okay');
-            this.presentModal();
-          }
-        },
+        // {
+        //   text: 'Producto recomendado',
+        //   handler: () => {
+        //     console.log('Confirm Okay');
+        //     this.presentModal();
+        //   }
+        // },
         {
           text: 'Cancel',
           role: 'cancel',

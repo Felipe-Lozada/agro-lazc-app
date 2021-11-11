@@ -1,0 +1,51 @@
+<ion-content color="light">
+  <div class="container">
+    <ion-grid fixed>
+      <ion-row>
+        <ion-col size="12">
+          <h1> Detalles del pedido: </h1>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <!-- <ion-col size="12">
+          <h3>Total de producto</h3>
+          <ion-text color="secondary" class="ion-text-center" mode="ios"></ion-text>
+        </ion-col> -->
+        <ion-col size="12">
+          <h3>Total</h3>
+          <ion-text color="secondary" class="ion-text-center" mode="ios">$15456.23</ion-text>
+        </ion-col>
+        <ion-col size="12">
+          <h3>Direccion</h3>
+          <ion-text color="secondary" class="ion-text-center" mode="ios">
+            <p>
+              Street	NICOLAS BRAVO 114, SAN PABLO AUTOPAN, 50200
+              City/town	ESTADO DE MEXICO
+              State/Province/Area	Toluca
+              Zip Code/Post Code	50200
+              Phone Number	722.296-5757
+              Country	México
+              Country Dialing Code	+52
+            </p>
+          </ion-text>
+        </ion-col>
+        <ion-col size="12">
+          <h3>Forma de pago</h3>
+          <ion-text color="secondary" class="ion-text-center" mode="ios"> Efectivo </ion-text>
+          <ion-icon name="cash-outline" mode="ios" color="secondary"></ion-icon>
+        </ion-col>
+        <ion-col size="12">
+          <ion-icon name="cash-outline" slot="start" color="secondary"></ion-icon>
+          <ion-text color="secondary" class="ion-text-center" mode="ios"> la entrega de su produco tarda entre 3 a 5 dias habiles </ion-text>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12">
+          <ion-button (click)="hacerPedido()" expand="block" fill="clear" shape="round">
+            Realizar pedido
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
