@@ -53,7 +53,7 @@ export class CarritoPage implements OnInit {
 
   comprar(){
     console.log('a comprar');
-    this.navCtrl.navigateForward('checkout');
+    this.navCtrl.navigateForward('chekout');
     this.storage.set('chekout', this.cartItems);
   }
 
