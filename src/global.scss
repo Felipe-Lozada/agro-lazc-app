@@ -25,6 +25,9 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
+main{
+    background: #f2f2f2;
+}
 
 ion-content {
     main, .inner-scroll{
@@ -39,6 +42,20 @@ ion-content {
 
     .alert-message{
         text-align: justify;
+    }
+
+}
+
+.info-msg .alert-wrapper {
+    background: #f2f2f2;
+    .alert-title{
+        text-transform: capitalize;
+        color: black;
+    }
+
+    .alert-message{
+        text-align: justify;
+        color: black;
     }
 
 }

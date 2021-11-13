@@ -1,49 +1,65 @@
 <ion-content color="light">
-  <div class="container">
-    <ion-grid fixed>
-      <ion-row>
-        <ion-col size="12">
-          <h1> Detalles del pedido: </h1>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <!-- <ion-col size="12">
-          <h3>Total de producto</h3>
-          <ion-text color="secondary" class="ion-text-center" mode="ios"></ion-text>
-        </ion-col> -->
-        <ion-col size="12">
-          <h3>Total</h3>
-          <ion-text color="secondary" class="ion-text-center" mode="ios">$15456.23</ion-text>
-        </ion-col>
-        <ion-col size="12">
-          <h3>Direccion</h3>
-          <ion-text color="secondary" class="ion-text-center" mode="ios">
-            <p>
-              NICOLAS BRAVO 114, SAN PABLO AUTOPAN, 50200
-              ESTADO DE MEXICO
-              Toluca
-              50200
-              722.296-5757
-            </p>
-          </ion-text>
-        </ion-col>
-        <ion-col size="12">
-          <h3>Forma de pago</h3>
-          <ion-text color="secondary" class="ion-text-center" mode="ios"> Efectivo </ion-text>
-          <ion-icon name="cash-outline" mode="ios" color="secondary"></ion-icon>
-        </ion-col>
-        <ion-col size="12">
-          <ion-icon name="cash-outline" slot="start" color="secondary"></ion-icon>
-          <ion-text color="secondary" class="ion-text-center" mode="ios"> la entrega de su produco tarda entre 3 a 5 dias habiles </ion-text>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col size="12">
-          <ion-button (click)="hacerPedido()" expand="block" fill="clear" shape="round">
-            Realizar pedido
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-grid>
-  </div>
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="12" class="ion-text-start" color="secondary">
+        <h1>Detalles del pedido: </h1>
+      </ion-col>
+      <ion-col size="12" class="ion-text-start" color="secondary">
+        <ion-grid fixed>
+          <ion-row>
+            <ion-col size="6">Cantidad de productos: </ion-col>
+            <ion-col size="6">{{checkout.productos}}</ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="6">Total</ion-col>
+            <ion-col size="6">${{checkout.total}}</ion-col>
+          </ion-row>
+          <!-- <ion-row>
+            <ion-col size="6">w</ion-col>
+            <ion-col size="6">e</ion-col>
+          </ion-row> -->
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-start" color="secondary" color="secondary">
+        <h2>Direcci&oacute;n: </h2>        
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-searchbar placeholder="direccion" mode="ios" type="text" (ionChange)="onSearchChange($event)"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-text-start" color="secondary">
+        <h2 color="secondary">Forma de pago: </h2>
+      </ion-col>
+      <ion-col size="12" class="ion-text-center">
+        <ion-list color="light">
+          <ion-item color="light">
+            <ion-icon slot="start" name="card-outline" color="secondary"></ion-icon>
+            <ion-label color="secondary">Trasnferencia</ion-label>
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="12"></ion-col>
+      <ion-col size="12"></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+
+<ion-footer class="ion-text-center">
+  <ion-grid fixed>
+    <ion-row>
+      <ion-col size="6">
+        <ion-label color="secondary">${{checkout.total}}</ion-label>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button (click)="hacerPedido()" mode="ios" color="secondary">
+          Pagar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
