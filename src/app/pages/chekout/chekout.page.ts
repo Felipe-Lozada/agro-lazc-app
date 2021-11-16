@@ -16,6 +16,8 @@ export class ChekoutPage implements OnInit {
   };
   public chArr = [];
 
+  public modoPago = '';
+
   constructor(
     private sotrage: Storage,
     private navCtrl: NavController,
@@ -105,6 +107,14 @@ export class ChekoutPage implements OnInit {
 
   hacerPedido(){
     this.presentAlertPrompt();
+  }
+
+  radioSelectected(e){
+    console.log(e.detail.value);
+  }
+
+  buscarDireccion(ev) {
+    console.log(ev.detail.value);
   }
 
 

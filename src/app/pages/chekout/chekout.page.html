@@ -26,7 +26,10 @@
         <h2>Direcci&oacute;n: </h2>        
       </ion-col>
       <ion-col size="12" class="ion-text-center">
-        <ion-searchbar placeholder="direccion" mode="ios" type="text" (ionChange)="onSearchChange($event)"></ion-searchbar>
+        <!-- <ion-searchbar placeholder="direccion" mode="ios" type="text" (ionChange)="onSearchChange($event)"></ion-searchbar> -->
+        <ion-item color="light">
+          <ion-searchbar mode="ios" animated color="secondary" (ionChange)="buscarDireccion($event)"></ion-searchbar>
+        </ion-item>
       </ion-col>
     </ion-row>
     <ion-row>
@@ -35,10 +38,13 @@
       </ion-col>
       <ion-col size="12" class="ion-text-center">
         <ion-list color="light">
-          <ion-item color="light">
-            <ion-icon slot="start" name="card-outline" color="secondary"></ion-icon>
-            <ion-label color="secondary">Trasnferencia</ion-label>
-          </ion-item>
+          <ion-radio-group value="transferencia" [(ngModel)]="modoPago" (ionChange)="radioSelectected($event)">     
+            <ion-item color="light">
+              <ion-label color="secondary">Trasferecia</ion-label>
+              <ion-icon slot="start" name="card-outline" color="secondary"></ion-icon>
+              <ion-radio slot="end" value="transferencia" color="secondary"></ion-radio>
+            </ion-item>
+          </ion-radio-group>
         </ion-list>
       </ion-col>
     </ion-row>

@@ -29,13 +29,13 @@ ion-footer ion-grid{
 }
 
 ion-footer ion-grid ion-row{
-    border-radius: 10px;
-    background: linear-gradient( 145deg, #dadada, #ffffff);
-    box-shadow: 5px 5px 10px #616161, -5px -5px 10px #ffffff;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    border-radius: 10px;
+    background: linear-gradient( 145deg, #dadada, #ffffff);
+    box-shadow: 5px 5px 10px #616161, -5px -5px 10px #ffffff;
 }
 
 ion-footer ion-grid ion-col {
